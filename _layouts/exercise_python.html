@@ -97,7 +97,10 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
         <div id="correctArea"></div>
         
         <p>
-        <strong>Enter your Ursinus netid before clicking run.  This is <b>not</b> your ID number or your email.  For example, mine is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to run, but they won't get an e-mail record):</strong> <input type="text" id="studentnetid" name="studentnetid" onchange="if(document.getElementById('studentnetid').value.length > 0) document.getElementById('runbutton').disabled = false; else document.getElementById('runbutton').disabled = true;"><br>
+        <strong>Enter your Ursinus netid before clicking run.  <u>This is not your ID number or your email.</u>  For example, mine is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to run, but they won't get an e-mail record or any form of credit)</strong> 
+        </p>
+        <p>
+        <input type="text" id="studentnetid" name="studentnetid" onchange="if(document.getElementById('studentnetid').value.length > 0) document.getElementById('runbutton').disabled = false; else document.getElementById('runbutton').disabled = true;"><br>
         {% if layout.formprocessor and layout.formprocessor != false %}
         {{ layout.formprocessordirections }}<br>
         {% endif %}
