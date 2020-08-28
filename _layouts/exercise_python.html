@@ -1,9 +1,9 @@
 ---
 layout: python
 
-formprocessor: "https://mathcs.ursinus.edu:8082/"
+formprocessor: "https://mathcs.ursinus.edu:8092/"
 enctype: "application/x-www-form-urlencoded"
-facultyemail: "wmongan@ursinus.edu"
+facultyemail: "ctralie@ursinus.edu"
 
 formprocessordirections: "Clicking Run below will check your work and, if it passes, will submit your work automatically. <strong>You must be connected to the VPN for submission to be successful!  You will receive a copy of your code via e-mail, so you'll know that it was submitted if you receive that e-mail!</strong>"
 
@@ -97,7 +97,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
         <div id="correctArea"></div>
         
         <p>
-        <strong>Enter your Ursinus netid before clicking run (non Ursinus students can simply enter their name):</strong> <input type="text" id="studentnetid" name="studentnetid" onchange="if(document.getElementById('studentnetid').value.length > 0) document.getElementById('runbutton').disabled = false; else document.getElementById('runbutton').disabled = true;"><br>
+        <strong>Enter your Ursinus netid before clicking run.  This is <b>not</b> your ID number or your email.  For example, mine is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to run, but they won't get an e-mail record):</strong> <input type="text" id="studentnetid" name="studentnetid" onchange="if(document.getElementById('studentnetid').value.length > 0) document.getElementById('runbutton').disabled = false; else document.getElementById('runbutton').disabled = true;"><br>
         {% if layout.formprocessor and layout.formprocessor != false %}
         {{ layout.formprocessordirections }}<br>
         {% endif %}
