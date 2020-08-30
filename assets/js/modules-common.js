@@ -45,9 +45,30 @@ function makeCodeJavaProcessing(codeString, mainString) {
     // TODO: Hack for dealing with the fact that chars are cast to
     // ints in this transpiler
     str = str.replace(/'/g, "\"");
-    console.log(str);
     return str;
 }
+
+function feedbackPrintlnJSConsole(s) {
+    console.log(s);
+    return s + "\n";
+}
+
+/**
+ * Change console.log statements into things that will be printed in the 
+ * feedback window
+ * 
+ * @param {*} codeString All Java code (except for the main) that should be executed, as a string
+ * @param {*} mainString A string of the Java code that should go in main
+ * 
+ * @return The final code that should be executed by processing.js
+ */
+function makeCodeJavscriptConsolePrint(codeString, mainString) {
+    feedbackString = "";
+    let str = codeString.replace(/console.log/g, "feedbackString += feedbackPrintlnJSConsole");
+    str += mainString.replace(/console.log/g, "feedbackString += feedbackPrintlnJSConsole");
+    return str;
+}
+
 
 /**
  * Convert the whitespace in a particular string to HTML whitespace
