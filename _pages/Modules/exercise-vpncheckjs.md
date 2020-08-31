@@ -3,7 +3,7 @@ layout: exercise_javascript
 permalink: /VPNCheckJS
 title: "CS476: Checking Module Backend Connection"
 excerpt: "CS476: Checking Module Backend Connection"
-canvasasmtid: "95313"
+canvasasmtid: "95926"
 canvaspoints: "2"
 
 info:
