@@ -22,21 +22,21 @@ processor:
  
 files:
 
-  - filename: "Tester.java"
+  - filename: "Student Code"
     name: tester
     ismain: false
-    isreadonly: true
+    isreadonly: false
     isvisible: true
     code: | 
         function printHello() {
           console.log("Hello world!");
         }  
 
-  - filename: "Main code block"
+  - filename: "Test Block"
     ismain: true
     name: main
     isreadonly: true
-    isvisible: false
+    isvisible: true
     code: |
         printHello();
         
