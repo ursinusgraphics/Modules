@@ -3,15 +3,15 @@ layout: exercise_javascript
 permalink: "Javascript/Example_Quadratic"
 title: "Javascript Example Module: Quadratic Formula"
 excerpt: "Javascript Example Module: Quadratic Formula"
-#canvasasmtid: "95035"
-#canvaspoints: "3"
-#canvashalftries: 5
+canvasasmtid: "95915"
+canvaspoints: "2"
+canvashalftries: 5
 
 info:
-  points: 3
-  instructions: "Write a function that computes one of the roots of a <a href=\"https://en.wikipedia.org/wiki/Quadratic_equation\">quadratic equation</a>.  In addition to multiplying b by itself, you can compute <code>b*b</code> using the <code><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow">Math.pow</a></code> function.  The <code><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">Math.sqrt()</a></code> function takes a single parameter, which is the number whose root should be computed, and returns the result.  Now complete the code to compute one of the roots of the quadratic formula"
+  points: 2
+  instructions: "Write a function that computes one of the roots of a <a href=\"https://en.wikipedia.org/wiki/Quadratic_equation\">quadratic equation</a>.  In addition to multiplying b by itself, you can compute <code>b*b</code> using the <code><a href = \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow\">Math.pow</a></code> function.  The <code><a href = \"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt\">Math.sqrt()</a></code> function takes a single parameter, which is the number whose root should be computed, and returns the result.  Now complete the code to compute one of the roots of the quadratic formula"
   goals:
-    - To write mathematical expressions in Python
+    - To write mathematical expressions in Javascript
     - To write a function that computes an expression and returns its result
     
 processor:  
