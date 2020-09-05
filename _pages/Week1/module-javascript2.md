@@ -7,7 +7,10 @@ excerpt: "CS 476: Computer Graphics - Javascript Loops, Arrays, And The Debugger
 info:
   prev: "./Quadratic"
   next: "./ArrayMinIndex"
-  video: "https://www.youtube.com/watch?v=JG2MAxgrzSA"
   
 ---
+
+Please watch the video below, and click the next button once you have finished
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JG2MAxgrzSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
