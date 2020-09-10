@@ -3,7 +3,7 @@ layout: exercise_javascript
 permalink: "Week1/Vectors8"
 title: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
 excerpt: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
-canvasasmtid: "97204"
+canvasasmtid: "99102"
 canvaspoints: "2"
 canvashalftries: 5
 
