@@ -35,7 +35,7 @@ processor:
       feedback: "Try again: It looks like you're returning the default value of 0 for every answer."    
  
 files:
-  - filename: "ArrayUtils.java"
+  - filename: "Student Code"
     name: arrayutils
     ismain: false
     isreadonly: false
