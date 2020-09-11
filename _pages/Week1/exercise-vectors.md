@@ -27,6 +27,12 @@ processor:
     - incorrectcheck: |
         pos.includes("0,0,0.0,0,0.0,0,0.0,0,0")
       feedback: "Try again: It looks like you're returning the default value of 0 for every coordinate in the new vector."    
+    - incorrectcheck: |
+        pos.includes("a is undefined")
+      feedback: "Try again: It looks like you're forgetting to include the result variable as a parameter in a vec3 method."    
+    - incorrectcheck: |
+        pos.includes("-1,-2,-3.1,2,3.-1,3,-1.1,-3,1")
+      feedback: "Try again: It looks like you're doing v1-v2, but recall that the vector from v1 to v2 is actually v2-v1!."   
  
 files:
   - filename: "Student Code"
