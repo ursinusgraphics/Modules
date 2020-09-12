@@ -1,8 +1,8 @@
 ---
 layout: module
 permalink: Week2/Vectors6
-title: "CS 476: Computer Graphics - Vectors Part 2: Exercise"
-excerpt: "CS 476: Computer Graphics - Vectors Part 2: Exercise"
+title: "CS 476: Computer Graphics - Module 3: Exercise"
+excerpt: "CS 476: Computer Graphics - Module 3: Exercise"
 
 info:
   prev: "./Vectors5"
