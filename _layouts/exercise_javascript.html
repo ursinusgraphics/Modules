@@ -212,7 +212,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
             formdata.append("facultyemail", "{{ layout.facultyemail | strip }}"); // required
             formdata.append("magic", "ursinus"); // required
             formdata.append("title", "{{ page.title | strip }}"); // required
-            formdata.append("studentnetid", document.getElementById("studentnetid").value); //required
+            formdata.append("studentnetid", document.getElementById("studentnetid").value.toLowerCase()); //required
             formdata.append("code", submitcode);
             {% if page.canvasasmtid %}
             formdata.append("canvasasmtid", "{{page.canvasasmtid}}");
