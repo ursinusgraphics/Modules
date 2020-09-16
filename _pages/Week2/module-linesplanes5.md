@@ -1,8 +1,8 @@
 ---
 layout: module
 permalink: Week2/LinesAndPlanes5
-title: "CS 476: Computer Graphics - Module 4 Part 2"
-excerpt: "CS 476: Computer Graphics - Module 4 Part 2"
+title: "CS 476: Computer Graphics - Module 4 Part 3"
+excerpt: "CS 476: Computer Graphics - Module 4 Part 3"
 
 info:
   prev: "./LinesAndPlanes4"
