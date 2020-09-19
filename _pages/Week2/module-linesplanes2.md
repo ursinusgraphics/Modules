@@ -11,3 +11,7 @@ info:
 ---
 
 Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10507/take" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
+
+<h1>Notes</h1>
+
+<img src = "http://www.ctralie.com/Teaching/CS476_F2020/Lectures/VideoNotes/4_LinesAndRays.svg">

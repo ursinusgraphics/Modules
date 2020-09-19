@@ -10,3 +10,7 @@ info:
 ---
 
 Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10451/take" target="_blank">click here</a> to complete the last question for this module.
+
+<h1>Notes</h1>
+
+<img src = "http://www.ctralie.com/Teaching/CS476_F2020/Lectures/VideoNotes/3_Vectors3.svg">
