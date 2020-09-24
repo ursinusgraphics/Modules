@@ -10,6 +10,6 @@ info:
   
 ---
 
-Please watch the video below, and click the next button once you have finished
+Please watch the video below, and click the next button once you have finished. <a href = "http://www.ctralie.com/Teaching/CS476_F2020/Lectures/Module6_2DMatrices/slides.pdf">Click here</a> for the slides that go along with this video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1Uon5eHPQdI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
