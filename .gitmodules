@@ -1,0 +1,3 @@
+[submodule "assets/js/MatrixTransformationsLive"]
+	path = assets/js/MatrixTransformationsLive
+	url = https://github.com/Ursinus-CS476-F2020/MatrixTransformationsLive.git
