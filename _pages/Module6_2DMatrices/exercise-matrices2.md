@@ -12,7 +12,7 @@ info:
   points: 1
   instructions: "<p>Find a matrix that rotates vectors counter-clockwise by 270 degrees (or alternatively, rotates it 90 degrees clockwise). Please use the widget below to input your matrix and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
   goals:
-    - Work with fundamental examples of matrix multiplications
+    - Construct a 2D rotation matrix
     
 processor:  
   correctfeedback: "Correct!!" 

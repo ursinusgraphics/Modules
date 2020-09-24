@@ -12,7 +12,7 @@ info:
   points: 1
   instructions: "<p>Find two matrices that do not commute; that is, that give a different result if you apply them in a different order. Please use the widget below to input your matrix and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
   goals:
-    - Work with fundamental examples of matrix multiplications
+    - Discover a counter example for the commutativity of matrix multiplication
     
 processor:  
   correctfeedback: "Correct!!" 

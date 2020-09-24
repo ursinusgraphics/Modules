@@ -12,7 +12,7 @@ info:
   points: 1
   instructions: "<p>The matrix A below rotates a vector counter-clockwise by 30 degrees.  Construct a matrix B which is its inverse. Please use the widget below to input your matrix and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
   goals:
-    - Work with fundamental examples of matrix multiplications
+    - Construct the inverse of a matrix
     
 processor:  
   correctfeedback: "Correct!!" 
