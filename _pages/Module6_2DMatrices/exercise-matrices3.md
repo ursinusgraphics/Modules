@@ -10,7 +10,7 @@ info:
   prev: "./Video3"
   next: "./Video4"
   points: 1
-  instructions: "<p>Find two matrices that do not commute; that is, that give a different result if you apply them in a different order. Please use the widget below to input your matrix and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
+  instructions: "<p>Find two matrices that do not commute; that is, construct a matrix A and a matrix B so that B(Ax) is not the same as A(Bx).  Please use the widget below to input your matrices and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
   goals:
     - Discover a counter example for the commutativity of matrix multiplication
     
