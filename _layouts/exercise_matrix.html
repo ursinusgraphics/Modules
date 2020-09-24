@@ -1,0 +1,208 @@
+---
+layout: default
+
+formprocessor: "https://mathcs.ursinus.edu:8093/"
+enctype: "application/x-www-form-urlencoded"
+facultyemail: "ctralie@ursinus.edu"
+
+formprocessordirections: "Clicking Run below will check your work and, if it is correct, will submit your work automatically. <strong>You must be either on campus or connected to the VPN for submission to be successful!  You will receive a copy of your solution via e-mail, so you'll know that it was submitted if you receive that e-mail!</strong>"
+
+submitformlinkdirections: "Clicking Run below will check your work and, if it is correct, make a page appear above that you can use to submit your work or with further instructions."
+---
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="{{site.baseurl}}/assets/js/jquery.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/gl-matrix-min.js"></script>
+<script src="{{site.baseurl}}/assets/js/skel.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/util.js"></script>
+<script src="{{site.baseurl}}/assets/js/main.js"></script>
+
+<style>
+.image_off, #home:hover .image_on{
+   display:none
+}
+.image_on, #home:hover .image_off{
+   display:block
+}
+
+#feedbackText {
+    position: relative;
+    width: 700px;
+    height: 100px;
+}
+
+</style>
+
+<script src="{{site.baseurl}}/assets/js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/assets/js/gl-matrix-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/assets/js/jsmatrix.js" type="text/javascript" charset="utf-8"></script>
+
+<div id="main" role="main">
+  <div class="archive">    
+    <h1 class="page__title">{{ page.title }}{% if page.info.points %} ({{page.info.points}} Points){% endif %}</h1>
+        Developed by <a href="http://www.ctralie.com">Chris Tralie</a>.
+
+        {% if page.info.prev or page.info.next %}
+        <p>
+        {% if page.info.prev %}
+        <button onclick="window.location.href = '{{ page.info.prev }} ';"> &lt--- Previous</button>
+        {% endif %}
+        {% if page.info.next %}
+        <button onclick="window.location.href = '{{ page.info.next }}';">Next ---&gt</button>
+        {% endif %}
+        </p>
+        <HR>
+        {% endif %}
+        
+        {% if page.info.goals %}
+        <h1>Exercise Goals</h1>
+        The goals of this exercise are:
+        <ol>
+        {% for goal in page.info.goals %}
+        <li>{{goal}}</li>
+        {% endfor %}
+        </ol>
+        {% endif %}
+        
+        {% if page.info.instructions %}
+        {{ page.info.instructions }}
+        {% endif %}
+        
+        <div id="correctArea"></div>
+        
+        <p>
+        <strong>Enter your Ursinus netid before clicking the Check/Submit button.  This is <u>not</u> your ID number or your email.  For example, my netid is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to run, but they won't get an e-mail record or any form of credit)</strong> 
+        </p>
+        
+        <table>
+            <tr>
+                <td>
+                    Netid
+                </td>
+                <td>
+                    <input type="text" id="studentnetid" name="studentnetid" onchange="if(document.getElementById('studentnetid').value.length > 0) document.getElementById('runbutton').disabled = false; else document.getElementById('runbutton').disabled = true;">
+                </td>
+            </tr>
+        </table>
+        {% if layout.formprocessor and layout.formprocessor != false %}
+        {{ layout.formprocessordirections }}<br>
+        {% endif %}
+        {% if page.processor.submitformlink and page.processor.submitformlink != false %}
+        {{ layout.submitformlinkdirections }}<br>
+        {% endif %}
+        
+        <button type = "button" onclick = "if(document.getElementById('studentnetid').value.length > 0) runCode(); else correctArea.innerHTML = '<h3><font color = #AA0000>Please enter your netid first!</font></h3>';" id="runbutton" disabled>Check/Submit</button>
+        </p>
+        
+        <!-- Must name main file "main" and the div tag here/css/processing code below is hardcoded to mainEditor -->
+        {% for file in page.files %}
+        {% if file.isvisible == true %}
+        <h3>{{ file.filename }}</h3>
+        {% endif %}
+        
+        {% if file.ismain == true %}<div id="mainEditor">{% else %}<div id="{{ file.name }}Editor">{% endif %}{{ file.code | strip }}</div>
+        {% endfor %}
+
+
+        <script>
+        {{ page.processor.setupprocess | strip }}
+
+        let correctArea = document.getElementById("correctArea");
+        let correctlyAnswered = false;
+        let numAttempts = 0;
+
+        // https://stackoverflow.com/questions/7542586/new-formdata-application-x-www-form-urlencoded
+        function urlencodeFormData(fd){
+            var s = '';
+            function encode(s){ return encodeURIComponent(s).replace(/%20/g,'+'); }
+            for(var pair of fd.entries()){
+                if(typeof pair[1]=='string'){
+                    s += (s?'&':'') + encode(pair[0])+'='+encode(pair[1]);
+                }
+            }
+            return s;
+        }
+
+        /**
+         * Send code to the server with a POST command
+         * @param {boolean} vpnwarn Whether to warn about connecting to a vpn
+         * @param {boolean} halfcredit Whether this is a half credit submission
+         * @param {string} solution The solution in string form
+         */
+        function postSolution(vpnwarn, halfcredit, solution) {
+            // Setting a layout.formprocessor will send a POST request to a form processor
+            {% if layout.formprocessor and layout.formprocessor != false %}
+            
+            
+            var xhttp = new XMLHttpRequest();
+            xhttp.onerror = function(e){
+                if (vpnwarn) {
+                    alert("Unable to submit.  Are you connected to the VPN?  Please try to submit again!");
+                }
+            };
+
+            xhttp.open("POST", "{{ layout.formprocessor | strip }}", true)
+            xhttp.setRequestHeader("Content-type", "{{ layout.enctype | strip }}");
+            
+            var formdata = new FormData();
+            formdata.append("facultyemail", "{{ layout.facultyemail | strip }}"); // required
+            formdata.append("magic", "ursinus"); // required
+            formdata.append("title", "{{ page.title | strip }}"); // required
+            formdata.append("studentnetid", document.getElementById("studentnetid").value.toLowerCase()); //required
+            formdata.append("solution", solution);
+            {% if page.canvasasmtid %}
+            formdata.append("canvasasmtid", "{{page.canvasasmtid}}");
+            {% endif %}
+            {% if page.canvaspoints %}
+            formdata.append("canvaspoints", "{{page.canvaspoints}}");
+            {% endif %}
+            if (halfcredit) {
+                formdata.append("canvashalfcredit", true);
+            }
+            
+            xhttp.send(urlencodeFormData(formdata));                    
+            {% endif %}
+        }
+
+        function runCode() {
+            numAttempts++;
+            let solution = "";
+            {{ page.processor.feedbackprocess | strip }}
+            if ({{ page.processor.correctcheck | strip}}) {
+                correctlyAnswered = true;
+                correctArea.innerHTML = "<h3><font color = #00AA00>{{ page.processor.correctfeedback | strip}}</font></h3>";
+                <!-- Setting a page.processor.submitformlink in the markdown will pop up an iframe with a page of your choice -->
+                {% if page.processor.submitformlink and page.processor.submitformlink != false %}
+                correctArea.innerHTML += `
+                <iframe src = "{{ page.processor.submitformlink | strip }}" width=800 height=500>
+                `;
+                {% endif %}
+                
+                postSolution(true, false, solution);
+            }
+            {% if page.processor.incorrectchecks %}
+            {% for check in page.processor.incorrectchecks %}
+            else if ({{ check.incorrectcheck | strip}}) {
+                correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
+            }
+            {% endfor %}
+            {% endif %}
+            else {
+                correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
+            }
+
+            {% if page.canvashalftries %}
+            if (!correctlyAnswered && numAttempts == {{ page.canvashalftries }}) {
+                postSolution(false, true, solution);
+            }
+
+
+            {% endif %}
+
+        }
+        </script>        
+        
+    {{ content }} 
+  </div>
+</div>
