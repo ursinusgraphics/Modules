@@ -25,7 +25,7 @@ processor:
     let sideLength = 40;
     let c = Math.cos(Math.PI/6);
     let s = Math.sin(Math.PI/6);
-    let AInit = glMatrix.mat3.fromValues(c, -s, 0, s, c, 0, 0, 0, 1);
+    let AInit = glMatrix.mat3.fromValues(c, s, 0, -s, c, 0, 0, 0, 1);
     let res = addNCompositionMatrixWidgets(matrixDisplay, 2, false, width, height, sideLength, [AInit]);
     let AInputs = res.MInputs[0];
     let BInputs = res.MInputs[1];

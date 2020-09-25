@@ -28,7 +28,7 @@ processor:
   feedbackprocess: | 
     let mat = textToMatrix(AInputs); 
     solution = JSON.stringify(mat);
-    let correct = glMatrix.mat3.fromValues(0, 1, 0, -1, 0, 0, 0, 0, 1);
+    let correct = glMatrix.mat3.fromValues(0, -1, 0, 1, 0, 0, 0, 0, 1);
   correctcheck: |
     glMatrix.mat3.equals(correct, mat)
 
