@@ -26,9 +26,9 @@ processor:
     let c = Math.cos(Math.PI/6);
     let s = Math.sin(Math.PI/6);
     let AInit = glMatrix.mat3.fromValues(c, -s, 0, s, c, 0, 0, 0, 1);
-    let res = add2CompositionMatrixWidgets(matrixDisplay, false, width, height, sideLength, AInit);
-    let AInputs = res.AInputs;
-    let BInputs = res.BInputs;
+    let res = addNCompositionMatrixWidgets(matrixDisplay, 2, false, width, height, sideLength, [AInit]);
+    let AInputs = res.MInputs[0];
+    let BInputs = res.MInputs[1];
   feedbackprocess: | 
     let A = textToMatrix(AInputs);
     let B = textToMatrix(BInputs);

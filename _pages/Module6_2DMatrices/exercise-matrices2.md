@@ -23,13 +23,13 @@ processor:
     let width = 400;
     let height = 400;
     let sideLength = 100;
-    let res = addSingleMultiplicationWidget(matrixDisplay, false, width, height, sideLength);
-    let AInputs = res.AInputs;
+    let res = addNCompositionMatrixWidgets(matrixDisplay, 1, false, width, height, sideLength);
+    let AInputs = res.MInputs[0];
   feedbackprocess: | 
     let mat = textToMatrix(AInputs); 
-    console.log(mat);
     solution = JSON.stringify(mat);
+    let correct = glMatrix.mat3.fromValues(0, 1, 0, -1, 0, 0, 0, 0, 1);
   correctcheck: |
-    mat[0] == 0 && mat[1] == 1 && mat[3] == -1 && mat[4] == 0  
+    glMatrix.mat3.equals(correct, mat)
 
 ---

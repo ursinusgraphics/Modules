@@ -23,8 +23,8 @@ processor:
     let width = 400;
     let height = 400;
     let sideLength = 100;
-    let res = addSingleMultiplicationWidget(matrixDisplay, false, width, height, sideLength);
-    let AInputs = res.AInputs;
+    let res = addNCompositionMatrixWidgets(matrixDisplay, 1, false, width, height, sideLength);
+    let AInputs = res.MInputs[0];
   feedbackprocess: | 
     let mat = textToMatrix(AInputs); 
     solution = JSON.stringify(mat);
