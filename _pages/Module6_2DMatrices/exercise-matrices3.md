@@ -23,7 +23,7 @@ processor:
     let width = 180;
     let height = 180;
     let sideLength = 40;
-    let res = addCommutativeMatrixGrid(matrixDisplay, false, width, height, sideLength);
+    let res = addCommutativeMatrixGrid(matrixDisplay, false, false, width, height, sideLength);
     let AInputs = res.AInputs;
     let BInputs = res.BInputs;
   feedbackprocess: | 
