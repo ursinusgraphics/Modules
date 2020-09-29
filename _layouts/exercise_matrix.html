@@ -18,6 +18,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 <script src="{{site.baseurl}}/assets/js/skel.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/util.js"></script>
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
+<script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/dat.gui.min.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-utils.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-debug.js"></script>
 
@@ -118,8 +119,9 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 
 
         <script>
+        let shaderPath = "{{site.baseurl}}/assets/js/ggslac/shaders/";
+        let meshesPath = "{{site.baseurl}}/assets/js/ggslac/meshes/";
         {{ page.processor.setupprocess | strip }}
-
         let correctArea = document.getElementById("correctArea");
         let correctlyAnswered = false;
         let numAttempts = 0;
