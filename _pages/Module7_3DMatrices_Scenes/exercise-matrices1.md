@@ -12,7 +12,7 @@ info:
   points: 1
   instructions: "<p>Construct a single matrix that stretches by a factor of 3 in the y direction, and which then translates by the vector (1, 2, -1)</p><div id = \"matrixdisplay\"></div>"
   goals:
-    - Work with fundamental examples of matrix multiplications
+    - Work with fundamental examples of matrix multiplications to transform 3D shapes
     
 processor:  
   correctfeedback: "Correct!!" 
@@ -26,9 +26,9 @@ processor:
     let res = addNCompositionMatrixWidgets(matrixDisplay, 1, true, true, width, height, sideLength, [], shaderPath, meshesPath);
     let AInputs = res.MInputs[0];
   feedbackprocess: | 
-    let mat = textToMatrix(AInputs); 
+    let mat = textToMatrix(AInputs, true, true); 
     solution = JSON.stringify(mat);
-    let correct = glMatrix.mat4.fromValues(1, 0, 0, 1, 0, 3, 0, 2, 0, 0, 1, -1, 0, 0, 0, 1);
+    let correct = glMatrix.mat4.fromValues(1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 1, 2, -1, 1);
   correctcheck: |
     glMatrix.mat4.equals(correct, mat) 
 
