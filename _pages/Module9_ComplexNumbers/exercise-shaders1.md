@@ -8,7 +8,6 @@ info:
   prev: "./Video1"
   next: "./Video2"
 ---
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <p>
 If you haven't already, please <a href = "https://github.com/Ursinus-CS476-F2020/Assignment3_Shaders/archive/master.zip">click here</a> to download the starter code for assignment 3, which also includes code for this module, the next module, and in-class exercises this week.  For this exercise, please modify the <code>circle.frag</code> shader so that it draws a blobby red circle instead of a circle with sharp, jagged edges.  Recall that the formula for a Gaussian blob is 
