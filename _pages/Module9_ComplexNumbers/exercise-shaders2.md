@@ -10,9 +10,9 @@ info:
   prev: "./Video2"
   next: "./Video3"
   points: 1
-  instructions: "<p>The test code block has setup an object with a field \"grades\" in it, which is itself an object.  Fill in the function gradeChrisIDS301 to create an entry called \"ids301\" in the grades field whose value is \"grade\" </p></div>"
+  instructions: "Fill in the method <code>complexMultiply</code> to perform a complex multiplication between two complex numbers.  Recall that the complex product between <b>a+bi</b> and <b>c+di</b> is <b>(ac-bd) + (ad+bc)i"
   goals:
-    - Work with Javascript Object Notation (JSON)
+    - Implement complex multiplication in code
 
 processor:  
   correctfeedback: "Correct!!" 
@@ -31,7 +31,8 @@ files:
     isvisible: true
     code: |
         /**
-         * Compute the vector between two other vectors
+         * Compute the complex product of two complex numbers 
+         * represented as vectors
          * 
          * @param {vec2} x: The first complex number
          * @param {vec2} y: The second complex number
