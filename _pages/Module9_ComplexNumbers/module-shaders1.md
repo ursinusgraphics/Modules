@@ -1,8 +1,8 @@
 ---
 layout: module
 permalink: Module9/Video1
-title: "CS 476: Computer Graphics - Module 8 Part 1"
-excerpt: "CS 476: Computer Graphics - Module 8 Part 1"
+title: "CS 476: Computer Graphics - Module 9 Part 1"
+excerpt: "CS 476: Computer Graphics - Module 9 Part 1"
 
 info:
   next: "./Exercise1"
