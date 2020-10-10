@@ -14,4 +14,4 @@ Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10450/ta
 
 <h1>Notes</h1>
 
-<img src = "http://www.ctralie.com/Teaching/CS476_F2020/Lectures/VideoNotes/3_Vectors2.svg">
+<img src = "../images/Unit1/Vectors2.svg">

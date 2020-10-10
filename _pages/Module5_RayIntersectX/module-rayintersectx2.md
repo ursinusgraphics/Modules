@@ -12,4 +12,4 @@ info:
 
 Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10554/take" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
 
-<img src = "http://www.ctralie.com/Teaching/CS476_F2020/Lectures/VideoNotes/5_RayIntersectPlane.svg">
+<img src = "../images/Unit1/5_RayIntersectPlane.svg">
