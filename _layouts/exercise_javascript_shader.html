@@ -5,9 +5,9 @@ formprocessor: "https://mathcs.ursinus.edu:8093/"
 enctype: "application/x-www-form-urlencoded"
 facultyemail: "ctralie@ursinus.edu"
 
-formprocessordirections: "Clicking Run below will check your work and, if it passes, will submit your work automatically. <strong>You must be connected to the VPN for submission to be successful!  You will receive a copy of your code via e-mail, so you'll know that it was submitted if you receive that e-mail!</strong>"
+formprocessordirections: "Clicking Check/Submit below will check your work and, if it passes, will submit your work automatically. <strong>You must be connected to the VPN for submission to be successful!  You will receive a copy of your code via e-mail, so you'll know that it was submitted if you receive that e-mail!</strong>"
 
-submitformlinkdirections: "Clicking Run below will check your work and, if it passes, make a page appear above that you can use to submit your work or with further instructions."
+submitformlinkdirections: "Clicking Check/Submit below will check your work and, if it passes, make a page appear above that you can use to submit your work or with further instructions."
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -113,7 +113,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
         <div id="correctArea"></div>
         
         <p>
-        <strong>Enter your Ursinus netid before clicking run.  This is <u>not</u> your ID number or your email.  For example, my netid is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to run, but they won't get an e-mail record or any form of credit)</strong> 
+        <strong>Enter your Ursinus netid before clicking Check/Submit.  This is <u>not</u> your ID number or your email.  For example, my netid is <code>ctralie</code> (non Ursinus students can simply enter their name to perform the correctness check, but they won't get an e-mail record or any form of credit)</strong> 
         </p>
         
         <table>
@@ -133,7 +133,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
         {{ layout.submitformlinkdirections }}<br>
         {% endif %}
         
-        <button type = "button" onclick = "if(document.getElementById('studentnetid').value.length > 0) runCode(); else correctArea.innerHTML = '<h3><font color = #AA0000>Please enter your netid first!</font></h3>';" id="runbutton" disabled>▶ Run</button>
+        <button type = "button" onclick = "if(document.getElementById('studentnetid').value.length > 0) runCode(); else correctArea.innerHTML = '<h3><font color = #AA0000>Please enter your netid first!</font></h3>';" id="runbutton" disabled>▶ Check/Submit</button>
         </p>
         
 
@@ -181,7 +181,6 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
             console.log("Updating shaders");
             let vertexSrc = vertEditor.getValue();
             let fragmentSrc = fragEditor.getValue();
-            console.log(vertexSrc);
             try {
                 function finalizeShader() {
                     let gl = scene.gl;
@@ -218,7 +217,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
                     requestAnimationFrame(scene.repaint.bind(scene));
                 }
                 // This is a hack since the default shader is blinnPhong
-                if (this.shaderReady in scene.shaders.blinnPhong || scene.shaders.blinnPhong.shaderReady) {
+                if ("shaderReady" in scene.shaders.blinnPhong) {
                     finalizeShader();
                 }
                 else {
@@ -227,17 +226,15 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 
             }
             catch(err) {
-                feedback.setValue("Error Compiling Shader: " + err.message);
+                feedback.setValue("Error Compiling Shader: check console");
             }
         }
-        
 
         function updateScene() {
             try {
                 scene.setupScene(JSON.parse(sceneEditor.getValue()), glcanvas.clientWidth, glcanvas.clientHeight);
                 scene.drawEdges = false;
                 scene.updateMeshDrawings();
-                console.log(scene.shaderToUse);
                 updateShader();
             }
             catch(err) {
@@ -303,14 +300,15 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 
         function runCode() {
             try {
-                numAttempts++;
-                let editorText = "";
-                for (var i in editors) {
-                    editorText += editors[i].getValue();
-                    editorText += "\n";
-                }
-                let code = makeCodeJavscriptConsolePrint(editorText, mainEditor.getValue());
-                eval(code);
+                updateShader();
+                // Reset the camera to be where it was at the beginning
+                let sceneJSON = JSON.parse(sceneEditor.getValue());
+                scene.camera.pos = glMatrix.vec3.fromValues.apply(null, sceneJSON.cameras[0].pos);
+                scene.camera.setRotFromQuat(glMatrix.quat.fromValues.apply(null, sceneJSON.cameras[0].rot));
+                scene.repaint();
+                let canvasStr = glcanvas.toDataURL();
+                //console.log(canvasStr);
+
                 feedback.setValue(feedbackString);
                 {{ page.processor.feedbackprocess | strip }}
                 
