@@ -40,6 +40,11 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 .image_on, #home:hover .image_off{
    display:block
 }
+#sceneEditor {
+    position: relative;
+    width: 700px;
+    height: 200px;
+}
 #vertEditor {
     position: relative;
     width: 700px;
@@ -92,16 +97,17 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
         {{ page.info.instructions }}
         {% endif %}
 
-
+        <h3>Scene</h3>
+        <div id="sceneEditor">{{ page.scene.code }}</div>
+        <button onclick="updateScene();">Update Scene</button>
         <h3>Vertex Shader</h3>
-        <div id="vertEditor"></div>
+        <div id="vertEditor">{{ page.vert.code }}</div>
         <h3>Fragment Shader</h3>
-        <div id="fragEditor"></div>
+        <div id="fragEditor">{{ page.frag.code }}</div>
         
-        <button onclick="updateShader();">Update Shader</button>
-        
-        <div id="feedbackText"></div>
+        <button onclick="updateShader();">Update Shaders</button>
 
+        <div id="feedbackText"></div>
         <canvas id="GLCanvas1" style="border: none;" width="800" height="600"></canvas>
 
         <div id="correctArea"></div>
@@ -134,29 +140,38 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 
 
         <script>
+        let correctArea = document.getElementById("correctArea");
+        let correctlyAnswered = false;
+        let numAttempts = 0;
+
+        let sceneEditor = ace.edit("sceneEditor");
+        sceneEditor.setFontSize(16);
+        sceneEditor.session.setMode("ace/mode/javascript");
+        {% if page.scene.isreadonly == true %}
+        sceneEditor.setReadOnly(true);                     
+        {% endif %}
+
         let shaderPath = "{{site.baseurl}}/assets/js/ggslac/shaders/";
         let meshesPath = "{{site.baseurl}}/assets/js/ggslac/meshes/";
         let glcanvas = document.getElementById("GLCanvas1");
         glcanvas.addEventListener("contextmenu", function(e){ e.stopPropagation(); e.preventDefault(); return false; }); //Need this to disable the menu that pops up on right clicking
         let scene = new SceneCanvas(glcanvas, shaderPath, meshesPath, true, true, true);
         scene.gui.close();
-        scene.setupScene(s, glcanvas.clientWidth, glcanvas.clientHeight);
-        scene.drawEdges = false;
-        scene.updateMeshDrawings();
-        requestAnimFrame(scene.repaint.bind(scene));
 
-
-        let correctArea = document.getElementById("correctArea");
-        let correctlyAnswered = false;
-        let numAttempts = 0;
 
         let vertEditor = ace.edit("vertEditor");
         vertEditor.setFontSize(16);
-        vertEditor.session.setMode("ace/mode/javascript");
+        vertEditor.session.setMode("ace/mode/glsl");
+        {% if page.vert.isreadonly == true %}
+        vertEditor.setReadOnly(true);                     
+        {% endif %}
 
-        let fragEditor = ace.edit("vertEditor");
+        let fragEditor = ace.edit("fragEditor");
         fragEditor.setFontSize(16);
-        fragEditor.session.setMode("ace/mode/javascript");
+        fragEditor.session.setMode("ace/mode/glsl");
+        {% if page.frag.isreadonly == true %}
+        fragEditor.setReadOnly(true);                     
+        {% endif %}
 
         let feedback = ace.edit("feedbackText");
         feedback.setFontSize(16);
@@ -166,15 +181,72 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
             console.log("Updating shaders");
             let vertexSrc = vertEditor.getValue();
             let fragmentSrc = fragEditor.getValue();
+            console.log(vertexSrc);
             try {
-                scene.shaderToUse = getShaderProgram(scene.gl, "studentShader", vertexSrc, fragmentSrc);
-                requestAnimationFrame(scene.repaint.bind(scene));
+                function finalizeShader() {
+                    let gl = scene.gl;
+                    let shader = getShaderProgram(gl, "studentShader", vertexSrc, fragmentSrc);
+                    shader.shaderReady = true;
+                    shader.description = 'Student shader';
+                    shader.vPosAttrib = gl.getAttribLocation(shader, "vPos");
+                    gl.enableVertexAttribArray(shader.vPosAttrib);
+                    shader.vNormalAttrib = gl.getAttribLocation(shader, "vNormal");
+                    gl.enableVertexAttribArray(shader.vNormalAttrib);
+                    shader.vColorAttrib = gl.getAttribLocation(shader, "vColor");
+                    gl.enableVertexAttribArray(shader.vColorAttrib);
+                    shader.pMatrixUniform = gl.getUniformLocation(shader, "uPMatrix");
+                    shader.mvMatrixUniform = gl.getUniformLocation(shader, "uMVMatrix");
+                    shader.tMatrixUniform = gl.getUniformLocation(shader, "tMatrix");
+                    shader.nMatrixUniform = gl.getUniformLocation(shader, "uNMatrix");
+                    shader.ambientColorUniform = gl.getUniformLocation(shader, "uAmbientColor");
+                    shader.uKaUniform = gl.getUniformLocation(shader, "uKa");
+                    shader.uKdUniform = gl.getUniformLocation(shader, "uKd");
+                    shader.uKsUniform = gl.getUniformLocation(shader, "uKs");
+                    shader.uShininessUniform = gl.getUniformLocation(shader, "uShininess");
+                    shader.uEyeUniform = gl.getUniformLocation(shader, "uEye");
+                    shader.u_lights = [];
+                    shader.u_numLights = gl.getUniformLocation(shader, "numLights");
+                    for (let i = 0; i < MAX_LIGHTS; i++) {
+                        let light = {
+                            pos: gl.getUniformLocation(shader, "lights["+i+"].pos"),
+                            color: gl.getUniformLocation(shader, "lights["+i+"].color"),
+                            atten: gl.getUniformLocation(shader, "lights["+i+"].atten")
+                        };
+                        shader.u_lights.push(light);
+                    }
+                    scene.shaderToUse = shader;
+                    requestAnimationFrame(scene.repaint.bind(scene));
+                }
+                // This is a hack since the default shader is blinnPhong
+                if (this.shaderReady in scene.shaders.blinnPhong || scene.shaders.blinnPhong.shaderReady) {
+                    finalizeShader();
+                }
+                else {
+                    scene.shaders.blinnPhong.then(finalizeShader);
+                }
+
             }
             catch(err) {
                 feedback.setValue("Error Compiling Shader: " + err.message);
             }
         }
-        //updateShader();
+        
+
+        function updateScene() {
+            try {
+                scene.setupScene(JSON.parse(sceneEditor.getValue()), glcanvas.clientWidth, glcanvas.clientHeight);
+                scene.drawEdges = false;
+                scene.updateMeshDrawings();
+                console.log(scene.shaderToUse);
+                updateShader();
+            }
+            catch(err) {
+                feedback.setValue("Error Parsing Scene: " + err.message);
+            }
+
+        }
+        updateScene();
+
 
         <!-- https://stackoverflow.com/questions/7542586/new-formdata-application-x-www-form-urlencoded -->
         function urlencodeFormData(fd){
@@ -241,6 +313,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
                 eval(code);
                 feedback.setValue(feedbackString);
                 {{ page.processor.feedbackprocess | strip }}
+                
                 if ({{ page.processor.correctcheck | strip}}) {
                     correctlyAnswered = true;
                     correctArea.innerHTML = "<h3><font color = #00AA00>{{ page.processor.correctfeedback | strip}}</font></h3>";
