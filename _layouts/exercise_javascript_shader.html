@@ -298,6 +298,51 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
             {% endif %}
         }
 
+        let offscreenCanvas = document.createElement("canvas");
+        offscreenCanvas.width = glcanvas.width;
+        offscreenCanvas.height = glcanvas.height;
+        offscreenCanvas.ctx = offscreenCanvas.getContext("2d");
+
+        /**
+         * Decode a PNG image using an offscreen canvas
+         * @param pngSrc A base64 representation of the image in PNG format
+         * @return A promise for the decoded image
+         */
+        function decodeImage(pngSrc) {
+            return new Promise((resolve, reject) => {
+                let image = new Image();
+                image.src = pngSrc;
+                image.onload = function() {
+                    offscreenCanvas.ctx.drawImage(image, 0, 0);
+                    resolve(offscreenCanvas.ctx.getImageData(0, 0, glcanvas.width, glcanvas.height));
+                }
+            });
+
+        }
+
+        /**
+         * Decode two PNG images and compare them pixel by pixel
+         * @param pngSrc1 A base64 representation of the first image in PNG format
+         * @param pngSrc2 A base64 representation of the second image in PNG format
+         * @return A promise for the equality check
+         */
+        function pngImagesEqual(pngSrc1, pngSrc2) {
+            return new Promise((resolve, reject) => {
+                decodeImage(pngSrc1).then(function(I1) {
+                    decodeImage(pngSrc2).then(function(I2) {
+                        let equal = true;
+                        for (let i = 0; i < I1.data.length; i++) {
+                            if (I1.data[i] != I2.data[i]) {
+                                equal = false;
+                                break;
+                            }
+                        }
+                        resolve(equal);
+                    });
+                });
+            });
+        }
+
         function runCode() {
             try {
                 updateShader();
@@ -307,33 +352,37 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 scene.camera.setRotFromQuat(glMatrix.quat.fromValues.apply(null, sceneJSON.cameras[0].rot));
                 scene.repaint();
                 let canvasStr = glcanvas.toDataURL();
-                //console.log(canvasStr);
+                console.log(canvasStr);
 
                 feedback.setValue("");
                 {{ page.processor.feedbackprocess | strip }}
                 
-                if ({{ page.processor.correctcheck | strip}}) {
-                    correctlyAnswered = true;
-                    correctArea.innerHTML = "<h3><font color = #00AA00>{{ page.processor.correctfeedback | strip}}</font></h3>";
-                    <!-- Setting a page.processor.submitformlink in the markdown will pop up an iframe with a page of your choice -->
-                    {% if page.processor.submitformlink and page.processor.submitformlink != false %}
-                    correctArea.innerHTML += `
-                    <iframe src = "{{ page.processor.submitformlink | strip }}" width=800 height=500>
-                    `;
-                    {% endif %}
-                    
-                    postCode(true, false);
-                }
-                {% if page.processor.incorrectchecks %}
-                {% for check in page.processor.incorrectchecks %}
-                else if ({{ check.incorrectcheck | strip}}) {
-                    correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
-                }
-                {% endfor %}
-                {% endif %}
-                else {
-                    correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
-                }
+                pngImagesEqual(canvasStr, {{page.processor.correctcheck}}).then(function(equal) {
+                    if (equal) {
+                        correctlyAnswered = true;
+                        correctArea.innerHTML = "<h3><font color = #00AA00>{{ page.processor.correctfeedback | strip}}</font></h3>";
+                        <!-- Setting a page.processor.submitformlink in the markdown will pop up an iframe with a page of your choice -->
+                        {% if page.processor.submitformlink and page.processor.submitformlink != false %}
+                        correctArea.innerHTML += `
+                        <iframe src = "{{ page.processor.submitformlink | strip }}" width=800 height=500>
+                        `;
+                        {% endif %}
+                        
+                        postCode(true, false);
+                    }
+                    else {
+                        correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
+                        {% if page.processor.incorrectchecks %}
+                        {% for check in page.processor.incorrectchecks %}
+                        pngImagesEqual(canvasStr, {{check.incorrectcheck}}).then(function(equal) {
+                            if (equal) {
+                                correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
+                            }
+                        });
+                        {% endfor %}
+                        {% endif %}
+                    }
+                });
             }
             catch(err) {
                 correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
