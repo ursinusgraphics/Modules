@@ -10,9 +10,9 @@ info:
   prev: "./Video2"
   next: "./Video3"
   points: 1.5
-  instructions: "Fill in the vertex shader to complete per-vertex Lambertian shading (also known as Gouraud Lambertian shading).  Most of the code has been completed for you, but you need to construct the vector from the vertex position in world coordinates to the light position.  Then, you need to take the dot product of a normalized version of this vector and the normal direction NT at the surface to compute your diffuse coefficient.  If the coefficient is less than 0, you should clamp it at 0"
+  instructions: "Fill in the vertex shader to complete per-vertex Lambertian illumination (also known as Gouraud Lambertian illumination).  Most of the code has been completed for you, but you need to construct the vector from the vertex position in world coordinates to the light position.  Then, you need to take the dot product of a normalized version of this vector and the normal direction NT at the surface to compute your diffuse coefficient.  If the coefficient is less than 0, you should clamp it at 0"
   goals:
-    - Explore how Lambertian shading can be implemented with vertex shaders
+    - Explore how Lambertian illumination can be implemented with vertex shaders
     - Explore how ideas from physics/optics can be implemented in code
 
 processor:  

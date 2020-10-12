@@ -309,7 +309,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 let canvasStr = glcanvas.toDataURL();
                 //console.log(canvasStr);
 
-                feedback.setValue(feedbackString);
+                feedback.setValue("");
                 {{ page.processor.feedbackprocess | strip }}
                 
                 if ({{ page.processor.correctcheck | strip}}) {
