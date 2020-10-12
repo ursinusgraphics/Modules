@@ -8,7 +8,6 @@ canvaspoints: "2"
 
 info:
   prev: "./Video2"
-  next: "./Video3"
   points: 2
   instructions: "Fill in the vertex shader to complete per-vertex Blinn-Phong illumination.  Most of the code has been completed for you, including the Lambertian term from last time.  You need to construct the vector h from the vertex position in world coordinates to the eye position.  You also need to create the vector dh, which is the normalized vector from the vertex position to the light, reflected about the normal NT.  Then, the code is already there to take the dot product of h and dh and to raise them to the shininess factor.  Just make sure you clamp it at zero before it gets raised to a power."
   goals:
@@ -48,8 +47,6 @@ processor:
       feedback: "Try again: You're getting there!  Just don't forget to normalize the vector from the vertex to the eye, and clamp the specular term at 0 before you raise it to a power"
     - incorrectcheck: noNormStr
       feedback: "Try again: You're so close!  Just don't forget to normalize the vector from the vertex to the eye"
-    - incorrectcheck: clampStr
-      feedback: "Try again: You're so close!  Just don't forget to normalize the vector from the vertex to the eye, and clamp the specular term at 0 before you raise it to a power" 
     - incorrectcheck: flippedClampStr
       feedback: "Try again: You're so close!  Your vector from the point to the eye is pointing the wrong direction, and you have to clamp the specular term at 0 before you raise it to a power" 
 
