@@ -320,24 +320,29 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 
         }
 
+        const DEFAULT_TOL = 255*500;
         /**
          * Decode two PNG images and compare them pixel by pixel
          * @param pngSrc1 A base64 representation of the first image in PNG format
          * @param pngSrc2 A base64 representation of the second image in PNG format
          * @return A promise for the equality check
          */
-        function pngImagesEqual(pngSrc1, pngSrc2) {
+        function pngImagesEqualTol(pngSrc1, pngSrc2, tol, name) {
+            if (tol === undefined) {
+                tol = DEFAULT_TOL;
+            }
+            if (name == undefined) {
+                name = "";
+            }
             return new Promise((resolve, reject) => {
                 decodeImage(pngSrc1).then(function(I1) {
                     decodeImage(pngSrc2).then(function(I2) {
-                        let equal = true;
+                        let diff = 0;
                         for (let i = 0; i < I1.data.length; i++) {
-                            if (I1.data[i] != I2.data[i]) {
-                                equal = false;
-                                break;
-                            }
+                            diff += Math.abs(I1.data[i] - I2.data[i]);
                         }
-                        resolve(equal);
+                        console.log(name + ": " + diff);
+                        resolve(diff < tol);
                     });
                 });
             });
@@ -352,12 +357,12 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 scene.camera.setRotFromQuat(glMatrix.quat.fromValues.apply(null, sceneJSON.cameras[0].rot));
                 scene.repaint();
                 let canvasStr = glcanvas.toDataURL();
-                console.log(canvasStr);
+                //console.log(canvasStr);
 
                 feedback.setValue("");
                 {{ page.processor.feedbackprocess | strip }}
                 
-                pngImagesEqual(canvasStr, {{page.processor.correctcheck}}).then(function(equal) {
+                pngImagesEqualTol(canvasStr, {{page.processor.correctcheck}}).then(function(equal) {
                     if (equal) {
                         correctlyAnswered = true;
                         correctArea.innerHTML = "<h3><font color = #00AA00>{{ page.processor.correctfeedback | strip}}</font></h3>";
@@ -374,7 +379,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                         correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
                         {% if page.processor.incorrectchecks %}
                         {% for check in page.processor.incorrectchecks %}
-                        pngImagesEqual(canvasStr, {{check.incorrectcheck}}).then(function(equal) {
+                        pngImagesEqualTol(canvasStr, {{check.incorrectcheck}}, DEFAULT_TOL, "{{check.incorrectcheck}}").then(function(equal) {
                             if (equal) {
                                 correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
                             }
