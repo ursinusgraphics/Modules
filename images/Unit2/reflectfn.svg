@@ -120,8 +120,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="209.50712"
-     inkscape:cy="260.98947"
+     inkscape:cx="79.864263"
+     inkscape:cy="258.13233"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -148,7 +148,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -192,30 +192,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12.76439571px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.79777473"
-       x="67.456116"
-       y="202.84393"
-       id="text1648-7"
-       transform="scale(1.018783,0.9815633)"><tspan
-         sodipodi:role="line"
-         id="tspan1646-0"
-         x="67.456116"
-         y="202.84393"
-         style="stroke-width:0.79777473">V</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:6.30394459px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.39399654"
-       x="80.282951"
-       y="190.49449"
-       id="text1676"
-       transform="scale(0.94437245,1.0589042)"><tspan
-         sodipodi:role="line"
-         id="tspan1674"
-         x="80.282951"
-         y="190.49449"
-         style="stroke-width:0.39399654">reflect</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.76439571px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.79777473"
        x="64.488052"
        y="127.56165"
        id="text1648-0"
@@ -240,17 +216,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="33.639881"
-       y="173.2128"
+       x="32.127975"
+       y="185.686"
        id="text1727"><tspan
          sodipodi:role="line"
          id="tspan1725"
-         x="33.639881"
-         y="173.2128"
+         x="32.127975"
+         y="185.686"
          style="stroke-width:0.26458332">what reflect(V, N)</tspan><tspan
          sodipodi:role="line"
-         x="33.639881"
-         y="178.50447"
+         x="32.127975"
+         y="190.97768"
          style="stroke-width:0.26458332"
          id="tspan1729">gives us</tspan></text>
     <path
@@ -285,14 +261,29 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="115.66071"
-       y="132.39137"
+       x="111.50298"
+       y="137.87202"
        id="text2232"><tspan
          sodipodi:role="line"
          id="tspan2230"
-         x="115.66071"
-         y="132.39137"
-         style="stroke-width:0.26458332">what we want</tspan></text>
+         x="111.50298"
+         y="137.87202"
+         style="stroke-width:0.26458332">what we want</tspan><tspan
+         sodipodi:role="line"
+         x="111.50298"
+         y="143.1637"
+         style="stroke-width:0.26458332"
+         id="tspan924">(the negative</tspan><tspan
+         sodipodi:role="line"
+         x="111.50298"
+         y="148.45535"
+         style="stroke-width:0.26458332"
+         id="tspan926">of what reflect</tspan><tspan
+         sodipodi:role="line"
+         x="111.50298"
+         y="153.74702"
+         style="stroke-width:0.26458332"
+         id="tspan928">gives us)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2263)"
        d="M 89.958333,159.41667 V 82.687505"
@@ -310,5 +301,16 @@
          x="80.418564"
          y="83.454819"
          style="stroke-width:0.85977411">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="68.791664"
+       y="196.45833"
+       id="text932"><tspan
+         sodipodi:role="line"
+         id="tspan930"
+         x="68.791664"
+         y="196.45833"
+         style="stroke-width:0.26458332">v - 2n*(v.n)</tspan></text>
   </g>
 </svg>

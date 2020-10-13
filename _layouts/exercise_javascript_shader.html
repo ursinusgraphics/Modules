@@ -357,7 +357,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 scene.camera.setRotFromQuat(glMatrix.quat.fromValues.apply(null, sceneJSON.cameras[0].rot));
                 scene.repaint();
                 let canvasStr = glcanvas.toDataURL();
-                //console.log(canvasStr);
+                console.log(canvasStr);
 
                 feedback.setValue("");
                 {{ page.processor.feedbackprocess | strip }}
