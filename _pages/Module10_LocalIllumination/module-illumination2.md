@@ -16,3 +16,10 @@ Please watch the video below, and click the next button once you have finished.
 
 <h1>Notes</h1>
 <img src = "../images/Unit2/Phong.svg">
+
+<h1>The reflect() function in GLSL</h1>
+<p>
+One thing I didn't mention in the video is that there's a built-in function in GLSL called <a href = "https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml">reflect()</a> to do reflections.  But we have to be careful when using it for specular, because it actually gives the wrong reflection.  The image below shows how:
+</p>
+
+<img src = "../images/Unit2/reflectfn.svg">
