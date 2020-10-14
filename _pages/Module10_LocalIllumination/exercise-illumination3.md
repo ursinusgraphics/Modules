@@ -1,12 +1,11 @@
 ---
 layout: exercise_javascript_shader
 permalink: "Module10/ClassExercise"
-title: "CS 476: Computer Graphics - Phong Shading"
-excerpt: "CS 476: Computer Graphics - Phong Shading"
+title: "CS 476: Computer Graphics - Phong Shading Class Exercise"
+excerpt: "CS 476: Computer Graphics - Phong Shading Class Exercise"
 
 info:
   prev: "./Video2"
-  points: 2
   instructions: "Move the code for Phong illumination in the vertex shader over to the fragment shader.  You create varying attributes for intersection, normal, and color"
   goals:
     - Explore how to convert Gouraud shading into Phong shading by moving the appropriate code over from the vertex shader to the fragment shader
@@ -94,14 +93,35 @@ vert:
 
 
 frag:
-  isreadonly: true
+  isreadonly: false
   code: |
         precision mediump float;
+
+        // Camera properties
+        uniform vec3 uEye;
+
+        // Lights
+        struct Light {
+            vec3 pos;
+            vec3 color;
+            vec3 atten;
+        };
+        #define MAX_LIGHTS 10
+        uniform Light lights[MAX_LIGHTS];
+
+        // Material properties
+        uniform vec3 uKa; // Ambient color for material
+        uniform vec3 uKd; // Diffuse color for material
+        uniform vec3 uKs; // Specular color for material
+        uniform float uShininess; // Specular exponent for material
+
+        // TODO: Define other varying properties
         varying vec3 color;
 
         void main(void) {
             gl_FragColor = vec4(color, 1.0);
         }
+
 
 scene:
   isreadonly: true
