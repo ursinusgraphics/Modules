@@ -69,7 +69,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 <div id="main" role="main">
   <div class="archive">    
     <h1 class="page__title">{{ page.title }}{% if page.info.points %} ({{page.info.points}} Points){% endif %}</h1>
-        Developed by <a href="http://www.ctralie.com">Chris Tralie</a>.
+         Graphics content developed by <a href="http://www.ctralie.com">Chris Tralie</a>.  Module autograding ecosystem designed by <a href="http://www.ctralie.com">Chris Tralie</a> and <a href = "http://www.billmongan.com/">Bill Mongan</a>.
 
         {% if page.info.prev or page.info.next %}
         <p>
@@ -357,7 +357,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 scene.camera.setRotFromQuat(glMatrix.quat.fromValues.apply(null, sceneJSON.cameras[0].rot));
                 scene.repaint();
                 let canvasStr = glcanvas.toDataURL();
-                console.log(canvasStr);
+                //console.log(canvasStr);
 
                 feedback.setValue("");
                 {{ page.processor.feedbackprocess | strip }}
