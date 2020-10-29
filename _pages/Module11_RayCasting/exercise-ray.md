@@ -8,6 +8,7 @@ canvaspoints: "1"
 
 info:
   prev: "./Video3"
+  next: "./AABBNotes"
   points: 1
   instructions: "Fill in the method <code>getSphereNormal</code> to compute the normal at a point of intersection on the sphere.  Note that we're going back into Javascript/glmatrix library mode for a moment, but that this stuff is much simpler with the built-in functions in GLSL."
   goals:

@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="226.96796mm"
+   height="319.66705mm"
+   viewBox="0 0 226.96795 319.66706"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="RayIntersectBox.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="244.64017"
+       y="276.98767"
+       width="246.81845"
+       height="144.76488"
+       id="rect1813" />
+    <marker
+       style="overflow:visible"
+       id="marker1476"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1474" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1368"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1366" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1199"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1197" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path855" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path840" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path858" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="284.6361"
+     inkscape:cy="432.39923"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1443"
+     inkscape:window-height="891"
+     inkscape:window-x="2353"
+     inkscape:window-y="80"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-3.1133814,39.756384)">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264999"
+       id="rect833"
+       width="71.059525"
+       height="61.988094"
+       x="54.42857"
+       y="129.7211" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
+       d="m 216.20238,185.28407 -37.79762,0.37798 -0.37798,-42.33333"
+       id="path835"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="216.20238"
+       y="185.28362"
+       id="text1173"><tspan
+         sodipodi:role="line"
+         id="tspan1171"
+         x="216.20238"
+         y="185.28362"
+         style="stroke-width:0.26458299">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="179.5387"
+       y="135.39075"
+       id="text1177"><tspan
+         sodipodi:role="line"
+         id="tspan1175"
+         x="179.5387"
+         y="135.39075"
+         style="stroke-width:0.26458299">y</tspan></text>
+    <circle
+       id="path1179"
+       style="fill:#000000;stroke:#000000;stroke-width:0.26458299"
+       cx="177.6488"
+       cy="185.66159"
+       r="0.050031763" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 178.40476,185.66205 -25.70238,27.59226"
+       id="path1181"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="158.37202"
+       y="221.94743"
+       id="text1191"><tspan
+         sodipodi:role="line"
+         id="tspan1189"
+         x="158.37202"
+         y="221.94743"
+         style="stroke-width:0.26458299">z</tspan></text>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193"
+       cx="10.583334"
+       cy="235.93294"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1199)"
+       d="m 11.717262,237.82276 76.35119,-76.35119"
+       id="path1195"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193-2"
+       cx="88.446434"
+       cy="161.47112"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="97.895844"
+       y="167.51874"
+       id="text1276"><tspan
+         sodipodi:role="line"
+         id="tspan1274"
+         x="97.895844"
+         y="167.51874"
+         style="stroke-width:0.26458299">a</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="13.229168"
+       y="237.06694"
+       id="text1280"><tspan
+         sodipodi:role="line"
+         id="tspan1278"
+         x="13.229168"
+         y="237.06694"
+         style="stroke-width:0.26458299">p0</tspan></text>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193-2-7"
+       cx="53.294643"
+       cy="129.34314"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193-2-74"
+       cx="123.59821"
+       cy="128.58717"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193-2-5"
+       cx="54.42857"
+       cy="189.44135"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1193-2-9"
+       cx="125.86607"
+       cy="190.57527"
+       rx="4.9136906"
+       ry="5.2916665" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="194.27975"
+       y="183.01576"
+       id="text1319"><tspan
+         sodipodi:role="line"
+         id="tspan1317"
+         x="194.27975"
+         y="183.01576"
+         style="stroke-width:0.26458299">W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="180.67262"
+       y="154.66754"
+       id="text1323"><tspan
+         sodipodi:role="line"
+         id="tspan1321"
+         x="180.67262"
+         y="154.66754"
+         style="stroke-width:0.26458299">H</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="167.82143"
+       y="205.31635"
+       id="text1327"><tspan
+         sodipodi:role="line"
+         id="tspan1325"
+         x="167.82143"
+         y="205.31635"
+         style="stroke-width:0.26458299">L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.85607004px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.25710201"
+       x="59.868145"
+       y="157.69406"
+       id="text1331"
+       transform="scale(1.029097,0.9717257)"><tspan
+         sodipodi:role="line"
+         id="tspan1329"
+         x="59.868145"
+         y="157.69406"
+         style="stroke-width:0.25710201">(cx, cy, cz+L/2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="3.7797625"
+       y="-20.03274"
+       id="text1548"><tspan
+         sodipodi:role="line"
+         id="tspan1546"
+         x="3.7797625"
+         y="-20.03274"
+         style="stroke-width:0.26458299">Ray Intersect Plane General Equation:</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="-11.213289"
+         style="stroke-width:0.26458299"
+         id="tspan1556">t = (a-p0).n / v.n</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="-2.3938394"
+         style="stroke-width:0.26458299"
+         id="tspan1558" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="6.4256105"
+         style="stroke-width:0.26458299"
+         id="tspan1560">Ex) Front face: n = (0, 0, 1)</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="15.245061"
+         style="stroke-width:0.26458299"
+         id="tspan1782" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="24.06451"
+         style="stroke-width:0.26458299"
+         id="tspan1674">t = ((ax, ay, az)-(p0x, p0y, p0z)).(0, 0, 1)/(vx, vy, vz).(0, 0, 1)</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="32.883961"
+         style="stroke-width:0.26458299"
+         id="tspan1784" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="41.703411"
+         style="stroke-width:0.26458299"
+         id="tspan1562">Simplify!  Lots drops out because nx = 0, ny = 0 for normal</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="50.522861"
+         style="stroke-width:0.26458299"
+         id="tspan1786" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="59.342312"
+         style="stroke-width:0.26458299"
+         id="tspan1676">t = (az - p0z)/vz,     az = cz + L/2</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="68.161758"
+         style="stroke-width:0.26458299"
+         id="tspan1788" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="76.981209"
+         style="stroke-width:0.26458299"
+         id="tspan1776">Get intersection p = p0 + t*v, </tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="85.800659"
+         style="stroke-width:0.26458299"
+         id="tspan1807" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="94.62011"
+         style="stroke-width:0.26458299"
+         id="tspan1809">check that  cx-W/2 &lt;= p.x &lt;= cx + W/2</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="103.43956"
+         style="stroke-width:0.26458299"
+         id="tspan1780">                 cy-H/2 &lt;= p.y &lt;= cy + H/2</tspan><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="112.25901"
+         style="stroke-width:0.26458299"
+         id="tspan1678" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="121.07846"
+         style="stroke-width:0.26458299"
+         id="tspan1680" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="129.89792"
+         style="stroke-width:0.26458299"
+         id="tspan1672" /><tspan
+         sodipodi:role="line"
+         x="3.7797625"
+         y="138.71736"
+         style="stroke-width:0.26458299"
+         id="tspan1550" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.2449px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.384185"
+       x="3.3216519"
+       y="-28.07579"
+       id="text1568"
+       transform="scale(0.90198125,1.1086705)"><tspan
+         sodipodi:role="line"
+         id="tspan1566"
+         x="3.3216519"
+         y="-28.07579"
+         style="stroke-width:0.384185">Axis-Aligned Ray Intersect box</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556011px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458299"
+       x="16.49856"
+       y="122.39542"
+       id="text1768"><tspan
+         sodipodi:role="line"
+         id="tspan1766"
+         x="16.49856"
+         y="122.39542"
+         style="stroke-width:0.26458299">(cx-W/2,</tspan><tspan
+         sodipodi:role="line"
+         x="16.49856"
+         y="131.21486"
+         style="stroke-width:0.26458299"
+         id="tspan1770">cy+H/2,</tspan><tspan
+         sodipodi:role="line"
+         x="16.49856"
+         y="140.03432"
+         style="stroke-width:0.26458299"
+         id="tspan1772">cz+L/2)</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1811"
+       style="font-size:7.05556px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1813);" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.7506609px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54691631"
+       x="6.3195786"
+       y="250.3364"
+       id="text922"
+       transform="scale(0.95366559,1.0485856)"><tspan
+         sodipodi:role="line"
+         id="tspan920"
+         x="6.3195786"
+         y="250.3364"
+         style="stroke-width:0.54691631">Ex) Right face: n = (1, 0, 0)</tspan><tspan
+         sodipodi:role="line"
+         x="6.3195786"
+         y="261.27472"
+         style="stroke-width:0.54691631"
+         id="tspan924">t = (ax - p0x)/vx, ax = cx + W/2</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 2.7354052,-3.9494515 H 229.14314"
+       id="path926"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2.357429,250.05055 226.407731,0.37798"
+       id="path928"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
