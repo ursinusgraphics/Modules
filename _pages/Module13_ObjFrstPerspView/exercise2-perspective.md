@@ -7,7 +7,8 @@ canvasasmtid: "102894"
 canvaspoints: "1.5"
 
 info:
-  prev: "./Video2"
+  prev: "./Video3"
+  next: "./Video4"
   points: 1.5
   instructions: "Fill in the projection matrix to perform a perspective projection, taking into consideration the fields of view in x and y, as well as the near and far clip planes."
   goals:
@@ -37,13 +38,12 @@ jseditor:
         let near = 0.01;
 
         scene.camera.getPMatrix = function() {
-            let tanx = Math.tan(fovx/2);
-            let tany = Math.tan(fovy/2);
             let pMatrix = glMatrix.mat4.create();
-            pMatrix[0] = 1/tanx;
-            pMatrix[5] = 1/tany;
+            // TODO: The depth part of the matrix has been
+            // filled in for you.  Fill in the rest of the
+            // elements which set it up to do a projection by -z
+            // and which scale the x and y down by 1/tan(fov/2)
             pMatrix[10] = far/(near-far);
-            pMatrix[11] = -1;
             pMatrix[14] = far*near/(near-far);
             pMatrix[15] = 0;
             return pMatrix;

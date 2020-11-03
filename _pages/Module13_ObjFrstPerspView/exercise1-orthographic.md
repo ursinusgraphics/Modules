@@ -8,6 +8,7 @@ canvaspoints: "1.5"
 
 info:
   prev: "./Video2"
+  next: "./Video3"
   points: 1.5
   instructions: "Fill in the projection matrix to perform an orthonormal projection, taking into consideration the provided near/far, top/bottom, and left/right clip planes."
   goals:
