@@ -55,7 +55,7 @@ scene:
   isreadonly: true
   code: |
         {
-            "name":"objectfirsttester"",
+            "name":"objectfirsttester",
             "materials":{
                 "green":{
                     "ka":[0.0, 0.4, 0.0],
