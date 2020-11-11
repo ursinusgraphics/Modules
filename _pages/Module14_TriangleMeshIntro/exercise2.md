@@ -11,7 +11,3 @@ info:
 ---
 
 Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/11432/take" target="_blank">click here</a> to complete two brief exercises on Canvas, and then continue onto the next video when you are finished.
-
-<h1>Notes</h1>
-
-<img src = "../images/Unit1/Vectors2.svg">
