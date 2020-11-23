@@ -11,4 +11,4 @@ info:
 ---
 
 
-Please <a href = "https://ursinus.instructure.com/courses/11567/quizzes/10451/take" target="_blank">click here</a> to complete a question on canvas, then continue to the next video
+Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/11567/take" target="_blank">click here</a> to complete a question on canvas, then continue to the next video
