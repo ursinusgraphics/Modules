@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: Module14/Video1
+permalink: Module15/Video2
 title: "CS 476: Computer Graphics - Module 15: Marching Squares"
 excerpt: "CS 476: Computer Graphics - Module 15: Marching Squares"
 
