@@ -228,11 +228,9 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                     correctArea.innerHTML = "<h3><font color = red>{{ page.processor.incorrectfeedback | strip }}</font></h3>";
                     {% if page.processor.incorrectchecks %}
                     {% for check in page.processor.incorrectchecks %}
-                    pngImagesEqualTol(canvasStr, {{check.incorrectcheck}}, DEFAULT_TOL, "{{check.incorrectcheck}}").then(function(equal) {
-                        if (equal) {
-                            correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
-                        }
-                    });
+                    if( {{check.incorrectcheck | strip}} ) {
+                        correctArea.innerHTML = "<h3><font color = red>{{ check.feedback | strip }}</font></h3>";
+                    };
                     {% endfor %}
                     {% endif %}
                 }

@@ -38,6 +38,14 @@ processor:
 
   correctcheck: vs.length == 2 && (poly1InPoly2 || poly2InPoly1)
 
+  incorrectchecks:
+    - incorrectcheck: vs.length == 2
+      feedback: "Try again: It looks like you have two loops, but you need to make sure one of them is inside of the other (hint: try subtracting one of the gaussians)"   
+    - incorrectcheck: vs.length == 0
+      feedback: "Try again: It looks like there are no contours in your image.  Please be sure to adjust the isolevel to find the correct height to generate the levelsets"
+    - incorrectcheck: vs.length == 1
+      feedback: "Try again: It looks like you only have one loop in your levelset.  Adjust the heightmap and choose a levelset so that there is one loop inside of another loop"
+
 function:
   code: |
         function fn(x, y) {
