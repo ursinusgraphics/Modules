@@ -19,9 +19,24 @@ processor:
   incorrectfeedback: "Try again"
   submitformlink: false
   feedbackprocess: | 
-    let numComponents = getConnectedComponents(canvas.ms.contour.edges, canvas.ms.contour.vertices.length/2).components.length;
+    let vs = canvas.ms.getContourLoops();
+    let poly1InPoly2 = true;
+    let poly2InPoly1 = true;
+    if (vs.length == 2) {
+      // Check all points in polygon1 against polygon2
+      for (let k = 0; k < vs[0].length && poly1InPoly2; k++) {
+        poly1InPoly2 &= pointInsidePolygon2D(vs[0][k], vs[1]);
+      }
+      // Check all points in polygon2 against polygon1
+      for (let k = 0; k < vs[1].length && poly2InPoly1; k++) {
+        poly2InPoly1 &= pointInsidePolygon2D(vs[1][k], vs[0]);
+      }
+    }
+    console.log("numComponents = " + vs.length);
+    console.log("poly1InPoly2 = " + poly1InPoly2);
+    console.log("poly2InPoly1 = " + poly2InPoly1);
 
-  correctcheck: numComponents == 2
+  correctcheck: vs.length == 2 && (poly1InPoly2 || poly2InPoly1)
 
 function:
   code: |
