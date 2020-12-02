@@ -1,8 +1,8 @@
 ---
 layout: exercise_javascript
 permalink: "Module16/Exercise1"
-title: "CS 476: Computer Graphics - Module 16 Exercise"
-excerpt: "CS 476: Computer Graphics - Module 16 Exercise"
+title: "CS 476: Computer Graphics - Module 16 Bounding Sphere Exercise"
+excerpt: "CS 476: Computer Graphics - Module 16 Bounding Sphere Exercise"
 canvasasmtid: "104644"
 canvaspoints: "1.5"
 
