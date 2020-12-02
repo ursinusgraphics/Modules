@@ -44,8 +44,7 @@ files:
     isvisible: true
     code: |
         /**
-         * Compute the complex product of two complex numbers 
-         * represented as vectors
+         * Compute the normal of a sphere at a point on the sphere
          * 
          * @param {vec3} c: The center of the sphere
          * @param {vec3} p: The point of intersection
