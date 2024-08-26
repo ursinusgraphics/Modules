@@ -80,7 +80,7 @@ files:
           
           width = 400
           height = 400
-          I = 255*np.ones((height, width, 3), dtype=np.uint8)
+          I = np.zeros((height, width, 3), dtype=np.uint8)
           ## Draw a little face (you can make this anything you want!)
           draw_rect(I, 100, 100, 200, 200, [255, 255, 0])
           draw_rect(I, 140, 150, 40, 40, [0, 0, 255])
