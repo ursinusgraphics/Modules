@@ -4,7 +4,7 @@ language: javascript
 permalink: "Week1/JavascriptGlobalBug"
 title: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
 excerpt: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
-canvasasmtid: "207824"
+canvasasmtid: "214234"
 canvaspoints: "1.5"
 canvashalftries: 5
 
