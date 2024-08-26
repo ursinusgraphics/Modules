@@ -13,8 +13,7 @@ info:
   points: 1.5
   instructions: "Fix the method <code>sum2DArr</code> so that it no longer goes through an infinite loop"
   goals:
-    - To use the glMatrix library and reference its API
-    - To implement vector operations in code
+    - To properly scope variables in Javascript
     
 processor:  
   correctfeedback: "Correct!!" 
