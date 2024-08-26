@@ -1,9 +1,10 @@
 ---
-layout: exercise_javascript
+layout: exercise
+language: javascript
 permalink: "Week1/ArrayMinIndex"
 title: "Javascript Example Module: Array Min Index"
 excerpt: "Javascript Example Module: Array Min Index"
-canvasasmtid: "97204"
+canvasasmtid: "207822"
 canvaspoints: "2"
 canvashalftries: 5
 
@@ -35,7 +36,7 @@ processor:
       feedback: "Try again: It looks like you're returning the default value of 0 for every answer."    
  
 files:
-  - filename: "Student Code"
+  - filename: "student.js"
     name: arrayutils
     ismain: false
     isreadonly: false
@@ -49,7 +50,7 @@ files:
           return 0;
         }
 
-  - filename: "Test Code Block"
+  - filename: "main.js"
     name: tester
     ismain: true
     isreadonly: true
@@ -62,4 +63,6 @@ files:
         let arr2 = [];
         let min2 = getMinIndex(arr2);
         console.log(min0 + "." + min1 + "." + min2);
+
+openFilesOnLoad: ["main.js", "student.js"]
 ---

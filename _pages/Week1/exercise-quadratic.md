@@ -1,9 +1,10 @@
 ---
-layout: exercise_javascript
+layout: exercise
+language: javascript
 permalink: "Week1/Quadratic"
 title: "Javascript Example Module: Quadratic Formula"
 excerpt: "Javascript Example Module: Quadratic Formula"
-canvasasmtid: "97203"
+canvasasmtid: "207823"
 canvaspoints: "2"
 canvashalftries: 5
 
@@ -26,7 +27,7 @@ processor:
     pos.includes("3,1") || pos.includes("3.0,1.0")        
  
 files:
-  - filename: "Student Code"
+  - filename: "student.js"
     name: driver
     ismain: false
     isreadonly: false
@@ -37,7 +38,7 @@ files:
             return 0; // This is a dummy value
          }
 
-  - filename: "Test Code Block"
+  - filename: "main.js"
     ismain: true
     name: main
     isreadonly: true
@@ -48,6 +49,7 @@ files:
         let ans2 = getQuadraticRoots(1, 0, -1);
         console.log(ans1 + "," + ans2);
         
+openFilesOnLoad: ["main.js", "student.js"]
 ---
 
 ## Quadratic Formula

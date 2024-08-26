@@ -1,9 +1,10 @@
 ---
-layout: exercise_javascript
+layout: exercise
+language: javascript
 permalink: "Week1/Vectors8"
 title: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
 excerpt: "CS 476: Computer Graphics - Vectors Part 1 Coding Exercise"
-canvasasmtid: "99102"
+canvasasmtid: "207824"
 canvaspoints: "2"
 canvashalftries: 5
 
@@ -35,7 +36,7 @@ processor:
       feedback: "Try again: It looks like you're doing v1-v2, but recall that the vector from v1 to v2 is actually v2-v1!."   
  
 files:
-  - filename: "Student Code"
+  - filename: "student.js"
     name: arrayutils
     ismain: false
     isreadonly: false
@@ -56,7 +57,7 @@ files:
           return result;
         }
 
-  - filename: "Test Code Block"
+  - filename: "main.js"
     name: tester
     ismain: true
     isreadonly: true
@@ -70,4 +71,6 @@ files:
         let res3 = vectorBetween(v3, v2);
         let res4 = vectorBetween(v2, v3);
         console.log(res1 + "." + res2 + "." + res3 + "." + res4);
+
+openFilesOnLoad: ["main.js", "student.js"]
 ---
