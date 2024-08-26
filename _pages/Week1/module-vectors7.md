@@ -1,8 +1,8 @@
 ---
 layout: module
 permalink: Week1/Vectors7
-title: "CS 476: Computer Graphics - Vectors Part 1"
-excerpt: "CS 476: Computer Graphics - Vectors Part 1"
+title: "CS 476: Computer Graphics - The Dot Product Rule"
+excerpt: "CS 476: Computer Graphics - The Dot Product Rule"
 
 info:
   next: "./Vectors8"

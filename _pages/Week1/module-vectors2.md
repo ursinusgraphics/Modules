@@ -10,4 +10,4 @@ info:
   
 ---
 
-Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10413/take" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
+Please <a href = "https://ursinus.instructure.com/courses/18079/quizzes/26855" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
