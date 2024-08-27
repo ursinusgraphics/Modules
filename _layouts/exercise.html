@@ -125,7 +125,6 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 <script src="{{site.baseurl}}/assets/js/util.js"></script>
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
 <script src="{{site.baseurl}}/assets/js/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="{{site.baseurl}}/assets/js/gl-matrix-min.js"></script>
 {% if page.language == "cpp" %}
 <script src = "{{site.baseurl}}/assets/js/cpp/process-manager.js"></script>
 <script src = "{{site.baseurl}}/assets/js/cpp/runtime.js"></script>
@@ -143,7 +142,7 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 <script src="{{site.baseurl}}/assets/js/wav.js"></script>
 {% endif %}
 {% if page.language == "graphics_view" or page.language == "graphics_shader" %}
-
+<script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/gl-matrix-min.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/dat.gui.min.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-utils.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-debug.js"></script>
@@ -210,8 +209,13 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
             </header>
             <main>
                 <div class="left-container">
-                    <div class="editor-container" id="editor-container">
-                    </div>
+                    <div class="editor-container" id="editor-container">Welcome to our online modules system!
+Be sure to log in with your Urinus ID
+before you proceed.  
+For example, Professor Tralie's ID is ctralie.
+
+If you are not an Ursinus student, that's fine!
+Just make something up, and you can still run everything</div>
                     <button id="clear-console">Clear Console</button>
                     <div class="output-container" id="output-container">
                         
@@ -227,6 +231,9 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
                         <div id="audioArea"></div>
                         <div id="graphicsArea" style="display:none;">
                             <button id="updateScene">Update Scene</button>
+                            {% if page.language == "graphics_shader" %}
+                            <button id="updateShaders">Update Shaders</button>
+                            {% endif %}
                             <canvas id="GLCanvas1" style="border: none" width="800" height="600"></canvas>
                         </div>
 
@@ -574,8 +581,11 @@ def pyodide_print(s):
                                 ace_editor.session.setMode("ace/mode/javascript");
                                 {% endif %}  
                                 // Override based on file extension
-                                if (path.match(/\.(frag|vert|cpp)$/)) {
+                                if (path.match(/\.(cpp)$/)) {
                                     ace_editor.session.setMode("ace/mode/c_cpp");
+                                }
+                                else if (path.match(/\.(frag|vert)$/)) {
+                                    ace_editor.session.setMode("ace/mode/glsl");
                                 }
                                 else if (path.match(/\.(py)$/)) {
                                     ace_editor.session.setMode("ace/mode/python");
@@ -1200,9 +1210,11 @@ def pyodide_print(s):
                         }
                         
                         {% if page.openFilesOnLoad %}
-                        // open initial files, if available
-                        var filesToOpen = {{ page.openFilesOnLoad | jsonify }};
-                        openMultipleFiles(filesToOpen);
+                        if (!(user === defaultuser)) {
+                            // open initial files, if available
+                            var filesToOpen = {{ page.openFilesOnLoad | jsonify }};
+                            openMultipleFiles(filesToOpen);
+                        }
                         {% endif %}
                     });
 
@@ -1527,7 +1539,12 @@ def pyodide_print(s):
                         glcanvas.addEventListener("contextmenu", function(e){ e.stopPropagation(); e.preventDefault(); return false; }); //Need this to disable the menu that pops up on right clicking
                         let scene = new SceneCanvas(glcanvas, shaderPath, meshesPath, true, true, true);
                         scene.gui.close();
-
+                        
+                        /**
+                         * Helper method for updateScene
+                         * 
+                         * @param {String} content The JSON code describing a scene
+                         */
                         function updateSceneFromContent(content) {
                             scene.setupScene(JSON.parse(content), glcanvas.clientWidth, glcanvas.clientHeight);
                             scene.drawEdges = false;
@@ -1563,7 +1580,6 @@ def pyodide_print(s):
                                     }
                                     if (name.match(/(scene.json)$/)) {
                                         if (!firstTime) {
-                                            console.log("openFiles", openFiles);
                                             await saveFile(path);
                                         }
                                         updateSceneFromContent(file.content);
@@ -1636,6 +1652,113 @@ def pyodide_print(s):
                     {% endif %} // End of graphics-specific code
 
 
+                    {% if page.language == "graphics_shader" %}
+                        async function finalizeShader(vertexSrc, fragmentSrc) {
+                            // This is a hack since the default shader is blinnPhong
+                            if ("shaderReady" in scene.shaders.blinnPhong) {
+                                await scene.shaders.blinnPhong;
+                            }
+                            let gl = scene.gl;
+                            let shader = getShaderProgram(gl, "studentShader", vertexSrc, fragmentSrc);
+                            shader.shaderReady = true;
+                            shader.description = 'Student shader';
+                            shader.vPosAttrib = gl.getAttribLocation(shader, "vPos");
+                            gl.enableVertexAttribArray(shader.vPosAttrib);
+                            shader.vNormalAttrib = gl.getAttribLocation(shader, "vNormal");
+                            gl.enableVertexAttribArray(shader.vNormalAttrib);
+                            shader.vColorAttrib = gl.getAttribLocation(shader, "vColor");
+                            gl.enableVertexAttribArray(shader.vColorAttrib);
+                            shader.pMatrixUniform = gl.getUniformLocation(shader, "uPMatrix");
+                            shader.mvMatrixUniform = gl.getUniformLocation(shader, "uMVMatrix");
+                            shader.tMatrixUniform = gl.getUniformLocation(shader, "tMatrix");
+                            shader.nMatrixUniform = gl.getUniformLocation(shader, "uNMatrix");
+                            shader.ambientColorUniform = gl.getUniformLocation(shader, "uAmbientColor");
+                            shader.uKaUniform = gl.getUniformLocation(shader, "uKa");
+                            shader.uKdUniform = gl.getUniformLocation(shader, "uKd");
+                            shader.uKsUniform = gl.getUniformLocation(shader, "uKs");
+                            shader.uShininessUniform = gl.getUniformLocation(shader, "uShininess");
+                            shader.uEyeUniform = gl.getUniformLocation(shader, "uEye");
+                            shader.u_lights = [];
+                            shader.u_numLights = gl.getUniformLocation(shader, "numLights");
+                            for (let i = 0; i < MAX_LIGHTS; i++) {
+                                let light = {
+                                    pos: gl.getUniformLocation(shader, "lights["+i+"].pos"),
+                                    color: gl.getUniformLocation(shader, "lights["+i+"].color"),
+                                    atten: gl.getUniformLocation(shader, "lights["+i+"].atten")
+                                };
+                                shader.u_lights.push(light);
+                            }
+                            scene.shaderToUse = shader;
+                            requestAnimationFrame(scene.repaint.bind(scene));
+                        }
+
+
+                        /**
+                         * Pull out the text from the first vertex shader and the first
+                         * fragment shader that are found
+                         * 
+                         * @param {event} evt Button click event (if applicable)
+                         * @param {boolean} firstTime If true, use shaders in initialFiles.
+                         * Otherwise, query the database and find the most recent version
+                         */
+                         async function updateShaders(evt, firstTime) {
+                            if (firstTime === undefined) {
+                                firstTime = false;
+                            }
+                            let files = initialFiles;
+                            if (!firstTime) {
+                                files = await getAllFilesRecursively(rootBasePath);
+                            }
+                            try {
+                                let foundVert = false;
+                                let foundFrag = false;
+                                let vertexSrc = "";
+                                let fragmentSrc = "";
+                                for (let i = 0; i < files.length; i++) {
+                                    let file = files[i];
+                                    let path = file.fileName;
+                                    let name = file.fileName;
+                                    if (!firstTime) {
+                                        path = file.path;
+                                        name = path.split(rootBasePath)[1];
+                                    }
+                                    if (name.match(/(.vert)$/)) {
+                                        if (!firstTime) {
+                                            await saveFile(path);
+                                        }
+                                        vertexSrc = file.content;
+                                        foundVert = true;
+                                    }
+                                    else if (name.match(/(.frag)$/)) {
+                                        if (!firstTime) {
+                                            await saveFile(path);
+                                        }
+                                        fragmentSrc = file.content;
+                                        foundFrag = true;
+                                    }
+                                }
+                                if (!foundVert) {
+                                    alert("No vertex shader file found!");
+                                }
+                                if (!foundFrag) {
+                                    alert("No fragment shader file found!");
+                                }
+                                if (foundVert && foundFrag) {
+                                    await finalizeShader(vertexSrc, fragmentSrc);
+                                }
+                                scene.repaint();
+                            }
+                            catch(err) {
+                                logToConsole("Error Compiling Shader: check Javscript console");
+                            }
+
+                        }
+                        updateShaders(null, true);
+                        document.getElementById("updateShaders").onclick = updateShaders;
+
+                    {% endif %} // End of graphics shader-specific code
+
+
                     async function runCode() {
                         try {
                             let filterFn = undefined;
@@ -1702,11 +1825,20 @@ def pyodide_print(s):
 
 
                             
-                            {% elsif page.language == "graphics_view" or page.language == "graphics_shader" %}
-                            ////////////////////////  GRAPHICS ///////////////////////////////
+                            {% elsif page.language == "graphics_view" %}
+                            /////////////////////  GRAPHICS VIEW /////////////////////////////
                             console.log("editorText\n", editorText);
                             await updateScene();
                             eval(editorText);
+                            scene.repaint();
+                            canvasStr = glcanvas.toDataURL();
+                            //////////////////////////////////////////////////////////////////
+
+                            {% elsif page.language == "graphics_shader"%}
+                            ////////////////////  GRAPHICS SHADER ////////////////////////////
+                            console.log("editorText\n", editorText);
+                            await updateShaders();
+                            await updateScene();
                             scene.repaint();
                             canvasStr = glcanvas.toDataURL();
                             //////////////////////////////////////////////////////////////////
