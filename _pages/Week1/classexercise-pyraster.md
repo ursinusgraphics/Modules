@@ -3,6 +3,7 @@ layout: exercise
 permalink: "Week1/PyRaster"
 title: "CS 477 Week 1: Rasterization Exercise"
 excerpt: "CS 477 Week 1: Rasterization Exercise"
+canvasasmtid: "1234"
 language: "pyodide"
 
 info:

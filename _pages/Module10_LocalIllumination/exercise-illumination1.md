@@ -140,7 +140,7 @@ files:
                 // TODO: Change the diffuse coefficient to be the dot product between
                 // the normal NT and the *normalized* direction from the vertex to the light
                 vec3 dummy = vec3(0.0, 0.0, 0.0);
-                float kdCoeff = dot(NT, dummy);
+                float kdCoeff = 1.0; // TODO: This needs to be updated
 
                 color = uKa + lights[0].color*(kdCoeff*uKd*vColor);
             }
