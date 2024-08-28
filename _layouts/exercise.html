@@ -202,8 +202,10 @@ submitformlinkdirections: "Clicking Run below will check your work and, if it pa
 <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 <script src="{{site.baseurl}}/assets/js/wav.js"></script>
 {% endif %}
-{% if page.language == "graphics_view" or page.language == "graphics_shader" %}
+{% if page.language == "graphics_view" or page.language == "graphics_shader" or page.language == "javascript" %}
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/gl-matrix-min.js"></script>
+{% endif %}
+{% if page.language == "graphics_view" or page.language == "graphics_shader" %}
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/dat.gui.min.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-utils.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-debug.js"></script>
