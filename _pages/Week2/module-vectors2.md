@@ -10,7 +10,7 @@ info:
   
 ---
 
-Please <a href = "https://ursinus.instructure.com/courses/10834/quizzes/10449/take" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
+Please <a href = "https://ursinus.instructure.com/courses/18079/quizzes/26851" target="_blank">click here</a> to complete a brief exercise on Canvas, and then continue onto the next video when you are finished.
 
 <h1>Notes</h1>
 <img src = "../images/Unit1/Vectors1.svg">
