@@ -3,7 +3,7 @@ layout: exercise_matrix
 permalink: "Module6/Exercise2"
 title: "CS 476: Computer Graphics - Module 6 Exercise 2"
 excerpt: "CS 476: Computer Graphics - Module 6 Exercise 2"
-canvasasmtid: "100174"
+canvasasmtid: "215690"
 canvaspoints: "1"
 
 info:
@@ -27,8 +27,8 @@ processor:
     let AInputs = res.MInputs[0];
   feedbackprocess: | 
     let mat = textToMatrix(AInputs); 
-    solution = JSON.stringify(mat);
     let correct = glMatrix.mat3.fromValues(0, -1, 0, 1, 0, 0, 0, 0, 1);
+    outputToSend = mat[0] + " " + mat[3] + "\n" + mat[1] + " " + mat[4];
   correctcheck: |
     glMatrix.mat3.equals(correct, mat)
 

@@ -1,23 +1,23 @@
 ---
 layout: default
-
-formprocessor: "https://mathcs.ursinus.edu:8093/"
-enctype: "application/x-www-form-urlencoded"
-facultyemail: "ctralie@ursinus.edu"
-
-formprocessordirections: "Clicking the Check/Submit below will check your work and, if it is correct, will submit your work automatically. <strong>You must be either on campus or connected to the VPN for submission to be successful!  You will receive a copy of your solution via e-mail, so you'll know that it was submitted if you receive that e-mail!</strong>"
-
-submitformlinkdirections: "Clicking Check/Submit below will check your work and, if it is correct, make a page appear above that you can use to submit your work or with further instructions."
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="{{site.baseurl}}/assets/js/jsencrypt.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/jszip.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/jquery.min.js"></script>
-<script src="{{site.baseurl}}/assets/js/gl-matrix-min.js"></script>
-<script src="{{site.baseurl}}/assets/js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/assets/js/jstree.min.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/assets/js/processing.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="{{site.baseurl}}/assets/js/mathjax/tex-mml-chtml.js"></script>
 <script src="{{site.baseurl}}/assets/js/skel.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/util.js"></script>
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
+<script src="{{site.baseurl}}/assets/js/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="{{site.baseurl}}/assets/js/gl-matrix-min.js"></script>
+<script src="{{site.baseurl}}/assets/js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/dat.gui.min.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-utils.js"></script>
 <script type="text/javascript" src = "{{site.baseurl}}/assets/js/ggslac/jslibs/webgl-debug.js"></script>
@@ -85,7 +85,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
         <div id="correctArea"></div>
         
         <p>
-        <strong>Enter your Ursinus netid before clicking the Check/Submit button.  This is <u>not</u> your ID number or your email.  For example, my netid is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to check for correctness, but they won't get an e-mail record or any form of credit)</strong> 
+        <strong>Enter your Ursinus netid before clicking the Check/Submit button.  This is <u>not</u> your ID number or your email.  For example, my netid is <code>ctralie</code> (non Ursinus students can simply enter their name to get this to check for correctness, but they won't get any form of credit)</strong> 
         </p>
         
         <table>
@@ -119,12 +119,16 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 
 
         <script>
+        const courseid = '{% if page.canvascourseid %}{{ page.canvascourseid }}{% else %}{{ site.canvascourseid }}{% endif %}';
+        const asmtid = '{{ page.canvasasmtid }}';
+        const publicKey = `{% if layout.publickey %}{{ layout.publickey }}{% else %}{{ site.publickey }}{% endif %}`;
         let shaderPath = "{{site.baseurl}}/assets/js/ggslac/shaders/";
         let meshesPath = "{{site.baseurl}}/assets/js/ggslac/meshes/";
         {{ page.processor.setupprocess | strip }}
         let correctArea = document.getElementById("correctArea");
         let correctlyAnswered = false;
         let numAttempts = 0;
+        let outputToSend = ""; // What to send to canvas
 
         // https://stackoverflow.com/questions/7542586/new-formdata-application-x-www-form-urlencoded
         function urlencodeFormData(fd){
@@ -138,50 +142,92 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
             return s;
         }
 
-        /**
-         * Send code to the server with a POST command
-         * @param {boolean} vpnwarn Whether to warn about connecting to a vpn
-         * @param {boolean} halfcredit Whether this is a half credit submission
-         * @param {string} solution The solution in string form
-         */
-        function postSolution(vpnwarn, halfcredit, solution) {
-            // Setting a layout.formprocessor will send a POST request to a form processor
-            {% if layout.formprocessor and layout.formprocessor != false %}
-            
-            
-            var xhttp = new XMLHttpRequest();
-            xhttp.onerror = function(e){
-                if (vpnwarn) {
-                    alert("Unable to submit.  Are you connected to the VPN?  Please try to submit again!");
-                }
-            };
-
-            xhttp.open("POST", "{{ layout.formprocessor | strip }}", true)
-            xhttp.setRequestHeader("Content-type", "{{ layout.enctype | strip }}");
-            
-            var formdata = new FormData();
-            formdata.append("facultyemail", "{{ layout.facultyemail | strip }}"); // required
-            formdata.append("magic", "ursinus"); // required
-            formdata.append("title", "{{ page.title | strip }}"); // required
-            formdata.append("studentnetid", document.getElementById("studentnetid").value.toLowerCase()); //required
-            formdata.append("solution", solution);
-            {% if page.canvasasmtid %}
-            formdata.append("canvasasmtid", "{{page.canvasasmtid}}");
-            {% endif %}
-            {% if page.canvaspoints %}
-            formdata.append("canvaspoints", "{{page.canvaspoints}}");
-            {% endif %}
-            if (halfcredit) {
-                formdata.append("canvashalfcredit", true);
+        function arrayBufferToBase64(buffer) {
+            let binary = '';
+            const bytes = new Uint8Array(buffer);
+            const len = bytes.byteLength;
+            for (let i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
             }
-            
-            xhttp.send(urlencodeFormData(formdata));                    
-            {% endif %}
+            return window.btoa(binary);
+        }
+
+
+        async function encryptFiles(halfcredit, points) {
+            const aesKey = await window.crypto.subtle.generateKey(
+                {
+                    name: 'AES-CBC',
+                    length: 256,
+                },
+                true,
+                ['encrypt', 'decrypt']
+            );
+
+            const iv = window.crypto.getRandomValues(new Uint8Array(16));
+            const encoder = new TextEncoder();
+
+            const encryptedFiles = [];
+            const encodedContent = encoder.encode(outputToSend);
+            const encryptedContent = await window.crypto.subtle.encrypt(
+                {
+                    name: 'AES-CBC',
+                    iv: iv,
+                },
+                aesKey,
+                encodedContent
+            );
+            encryptedFiles.push({
+                name: "matrixOutput.txt",
+                content: arrayBufferToBase64(encryptedContent)
+            });
+
+            const exportedAesKey = await window.crypto.subtle.exportKey('raw', aesKey);
+            const rsaEncrypt = new JSEncrypt();
+            rsaEncrypt.setPublicKey(publicKey);
+            const encryptedAesKey = rsaEncrypt.encrypt(arrayBufferToBase64(exportedAesKey));
+
+            // Encrypt the userId
+            const userId = document.getElementById("studentnetid").value.toLowerCase();
+            const encodedUserId = encoder.encode(userId);
+            const encryptedUserId = await window.crypto.subtle.encrypt(
+                {
+                    name: 'AES-CBC',
+                    iv: iv,
+                },
+                aesKey,
+                encodedUserId
+            );
+
+            if (encryptedAesKey) {
+                const encryptedPackage = {
+                    iv: arrayBufferToBase64(iv.buffer),
+                    aesKey: encryptedAesKey,
+                    files: encryptedFiles,
+                    user: arrayBufferToBase64(encryptedUserId), 
+                    courseId: courseid,
+                    asmtId: asmtid,
+                    halfcredit: halfcredit,
+                    points: points
+                };
+
+                return window.btoa(JSON.stringify(encryptedPackage));
+            } else {
+                throw new Error("Encryption failed.");
+            }
+        }
+
+        async function postCode(halfcredit, points) {
+            // download encrypted submission version
+            const encryptedContent = await encryptFiles(halfcredit, points);
+
+            let url = `{% if layout.formlink %}{{ layout.formlink }}{% else %}{{ site.formlink }}{% endif %}` + encryptedContent;
+            console.log("len(url)", url.length);
+            window.location.href = url; // window.open(url);
         }
 
         function runCode() {
+            const points = {% if page.info.points %}{{page.info.points}}{% else %}0{% endif %};
             numAttempts++;
-            let solution = "";
             {{ page.processor.feedbackprocess | strip }}
             if ({{ page.processor.correctcheck | strip}}) {
                 correctlyAnswered = true;
@@ -193,7 +239,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
                 `;
                 {% endif %}
                 
-                postSolution(true, false, solution);
+                postCode(false, points);
             }
             {% if page.processor.incorrectchecks %}
             {% for check in page.processor.incorrectchecks %}
@@ -208,7 +254,7 @@ submitformlinkdirections: "Clicking Check/Submit below will check your work and,
 
             {% if page.canvashalftries %}
             if (!correctlyAnswered && numAttempts == {{ page.canvashalftries }}) {
-                postSolution(false, true, solution);
+                postCode(true, points);
             }
 
 

@@ -3,7 +3,7 @@ layout: exercise_matrix
 permalink: "Module6/Exercise4"
 title: "CS 476: Computer Graphics - Module 6 Exercise 4"
 excerpt: "CS 476: Computer Graphics - Module 6 Exercise 4"
-canvasasmtid: "100178"
+canvasasmtid: "215692"
 canvaspoints: "1"
 
 info:
@@ -35,7 +35,7 @@ processor:
     let AB = glMatrix.mat3.create();
     glMatrix.mat3.multiply(AB, A, B);
     let eye = glMatrix.mat3.create();
-    solution = JSON.stringify(B);
+    outputToSend = mat[0] + " " + mat[3] + "\n" + mat[1] + " " + mat[4];
   correctcheck: |
     glMatrix.mat3.equals(AB, eye)
 
