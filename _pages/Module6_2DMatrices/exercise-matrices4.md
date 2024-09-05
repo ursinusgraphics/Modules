@@ -35,7 +35,7 @@ processor:
     let AB = glMatrix.mat3.create();
     glMatrix.mat3.multiply(AB, A, B);
     let eye = glMatrix.mat3.create();
-    outputToSend = mat[0] + " " + mat[3] + "\n" + mat[1] + " " + mat[4];
+    outputToSend = JSON.stringify({"B":B});
   correctcheck: |
     glMatrix.mat3.equals(AB, eye)
 

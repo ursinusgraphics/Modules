@@ -9,6 +9,6 @@ info:
   
 ---
 
-Please watch the brief video below to prep for a class exercise on Friday
+Please watch the brief video below to prep for a class exercise on Wednesday/Friday
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5R8C5t7DV7c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
