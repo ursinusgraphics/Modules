@@ -34,7 +34,7 @@ processor:
     glMatrix.mat4.multiply(AB, A, B);
     let BA = glMatrix.mat4.create();
     glMatrix.mat4.multiply(BA, B, A);
-    solution = JSON.stringify({"A":A, "B":B});
+    outputToSend = JSON.stringify({"A":A, "B":B});
     function isOrthonormal4x4(M) {
       let orthogonal = true;
       for (let i = 0; i < 4; i++) {

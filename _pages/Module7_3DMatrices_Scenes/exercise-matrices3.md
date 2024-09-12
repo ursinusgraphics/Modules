@@ -1,10 +1,12 @@
 ---
-layout: exercise_javascript
+layout: exercise
+language: javascript
 permalink: "Module7/Exercise3"
 title: "CS 476: Computer Graphics - Module 7 Exercise 3"
 excerpt: "CS 476: Computer Graphics - Module 7 Exercise 3"
 canvasasmtid: "100577"
 canvaspoints: "1"
+canvashalftries: 5
 
 info:
   prev: "./Video3"
@@ -24,7 +26,7 @@ processor:
     pos.includes("100")
 
 files:
-  - filename: "Student Code"
+  - filename: "student.js"
     name: arrayutils
     ismain: false
     isreadonly: false
@@ -41,7 +43,7 @@ files:
           // in grades, and give him a grade of "grade"
         }
 
-  - filename: "Test Code Block"
+  - filename: "main.js"
     name: tester
     ismain: true
     isreadonly: true
@@ -50,4 +52,6 @@ files:
         let chris = {"name":"Chris", "grades":{"cs476":100, "cs174":100} };
         gradeChrisIDS301(chris, 100);
         console.log(chris.grades.ids301);
+
+openFilesOnLoad: ["main.js", "student.js"]
 ---
