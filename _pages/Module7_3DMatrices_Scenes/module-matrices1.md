@@ -6,6 +6,7 @@ excerpt: "CS 476: Computer Graphics - Module 7 Part 1"
 
 info:
   next: "./Exercise1"
+  prev: "./Exercise0"
   
 ---
 
