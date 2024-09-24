@@ -10,7 +10,7 @@ canvaspoints: "1.5"
 info:
   prev: "./Video2"
   points: 1.5
-  instructions: "Fill in the method <code>complexMultiply</code> to perform a complex multiplication between two complex numbers.  Recall that the complex product between <b>a+bi</b> and <b>c+di</b> is <b>(ac-bd) + (ad+bc)i"
+  instructions: "Fill in the method <code>complexMultiply</code> to perform a complex multiplication between two complex numbers, using <code>vec2</code> from the glMatrix library to store the complex numbers in an array of 2 elements.  Recall that the complex product between <b>a+bi</b> and <b>c+di</b> is <b>(ac-bd) + (ad+bc)i"
   goals:
     - Implement complex multiplication in code
 
