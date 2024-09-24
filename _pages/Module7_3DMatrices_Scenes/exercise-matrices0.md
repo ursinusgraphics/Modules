@@ -13,6 +13,7 @@ info:
   instructions: "<p>Construct a matrix that turns the unit square into a 2x2 square (a scale by a factor of 2 in all dimensions), and which then translates it by the vector (-1, -1).  If you've gotten it right, it will keep the upper right corner fixed.  Please use the widget below to input your matrix and experiment, and when you believe you have the answer, enter your netid and the check/submit button below</p><div id = \"matrixdisplay\"></div>"
   goals:
     - Work with fundamental examples of matrix multiplications
+    - Use homogenous coordinates to express a translation in matrix form
     
 processor:  
   correctfeedback: "Correct!!" 

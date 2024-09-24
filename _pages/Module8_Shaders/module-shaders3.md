@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: Module8/Video3
+permalink: Module8Shaders/Video3
 title: "CS 476: Computer Graphics - Module 8 Part 3"
 excerpt: "CS 476: Computer Graphics - Module 8 Part 3"
 
