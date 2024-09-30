@@ -32,10 +32,10 @@ files:
     isvisible: true
     code: |
         /**
-         * Compute the complex product of two complex numbers 
-         * represented as vectors
+         * Extract the Yaw(alpha) / Pitch(beta) / Roll(gamma)
+         * from a rotation matrix R
          * 
-         * @param {mat4} x: A glMatrix mat4, in *column major order*
+         * @param {mat4} R: A glMatrix mat4, in *column major order*
          **/
         function getAngles(R) {
           let alpha = 0, beta=0, gamma=0; // These are dummy values
