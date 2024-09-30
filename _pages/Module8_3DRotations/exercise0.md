@@ -2,18 +2,19 @@
 layout: exercise
 language: javascript
 permalink: "Module8/Exercise0"
-title: "CS 476: Computer Graphics - Module 9 Exercise 2"
-excerpt: "CS 476: Computer Graphics - Module 9 Exercise 2"
-canvasasmtid: "216603"
-canvaspoints: "1.5"
+title: "CS 476: Computer Graphics - Module 8 Exercise 0"
+excerpt: "CS 476: Computer Graphics - Module 8 Exercise 0"
+canvasasmtid: "216849"
+canvaspoints: "2"
 
 info:
   prev: "./Video0"
   next: "./Video1"
-  points: 1.5
-  instructions: "Fill in the method <code>complexMultiply</code> to perform a complex multiplication between two complex numbers, using <code>vec2</code> from the glMatrix library to store the complex numbers in an array of 2 elements.  Recall that the complex product between <b>a+bi</b> and <b>c+di</b> is <b>(ac-bd) + (ad+bc)i"
+  points: 2
+  instructions: "Fill in the method <code>getAngles(R)</code> to extract <code>&alpha;</code>, <code>&beta;</code>, <code>&gamma;</code>, assuming that <b>R</b> is expressed as the product <h2><code>R<sub>Y</sub>(&alpha;) R<sub>X</sub>(&beta;) R<sub>Z</sub>(&gamma;)</code></h2>.  Note that you're given the matrix as a <code>mat4</code> which is <b>column major</b>.  The methods <code>Math.asin</code> and <code>Math.atan2</code> will come in handy.  No need to convert to degrees or to make the values positive.<p></p>"
   goals:
-    - Implement complex multiplication in code
+    - Convert between 3D rotation representations
+    - Convert from a rotation matrix to Tait-Bryan angles (roll/pitch/yaw)
 
 processor:  
   correctfeedback: "Correct!!" 
@@ -22,7 +23,7 @@ processor:
   feedbackprocess: | 
     var pos = feedbackString.trim();
   correctcheck: |
-    pos.includes("0+2i.5+-1i")
+    pos.includes("16.71,4.92,-120.17:-40.22,-14.12,129.85") || pos.includes("-0.29,0.09,-2.1:-0.7,-0.25,2.27")
 
 files:
   - filename: "student.js"
@@ -34,14 +35,12 @@ files:
          * Compute the complex product of two complex numbers 
          * represented as vectors
          * 
-         * @param {vec2} x: The first complex number
-         * @param {vec2} y: The second complex number
+         * @param {mat4} x: A glMatrix mat4, in *column major order*
          **/
-        function complexMultiply(x, y) {
-          let res = glMatrix.vec2.create();
+        function getAngles(R) {
+          let alpha = 0, beta=0, gamma=0; // These are dummy values
           // TODO: Fill this in.  
-
-          return res;
+          return {"alpha":alpha, "beta":beta, "gamma":gamma};
         }
 
   - filename: "main.js"
@@ -50,11 +49,19 @@ files:
     isreadonly: true
     isvisible: true
     code: | 
-        let c1 = glMatrix.vec2.fromValues(1, 1); // 1 + i
-        let c1xc1 = complexMultiply(c1, c1); // Result should be 2i
-        let c2 = glMatrix.vec2.fromValues(2, -3); // 2 - 3i
-        let c1xc2 = complexMultiply(c1, c2); // Result should be 5-i
-        console.log(c1xc1[0] + "+" + c1xc1[1] + "i" + "." + c1xc2[0] + "+" + c1xc2[1] + "i");
+        let res = getAngles([-0.45996176,-0.86138526,-0.21552406,0,0.84045837,-0.50065539,0.20730151,0,-0.28646975,-0.08578823,0.95424078,0,0,0,0,1]);
+        let alpha = (Math.round(res.alpha*100)/100).toString();
+        let beta = (Math.round(res.beta*100)/100).toString();
+        let gamma = (Math.round(res.gamma*100)/100).toString();
+        let s = alpha + "," + beta + "," + gamma;
+        
+        res = getAngles([-0.3682976087714904, 0.7444998480567603, -0.5568454432036434, 0.0, -0.6871370291961838, -0.6214335942495282, -0.3763814435457133, 0.0, -0.6262583927426798, 0.24400873792053612, 0.7404459206031069, 0.0, 0.0, 0.0, 0.0, 1.0]);
+        alpha = (Math.round(res.alpha*100)/100).toString();
+        beta = (Math.round(res.beta*100)/100).toString();
+        gamma = (Math.round(res.gamma*100)/100).toString();
+        s = s + ":" + alpha + "," + beta + "," + gamma;
+        console.log(s);
+
 
 openFilesOnLoad: ["main.js", "student.js"]
 ---

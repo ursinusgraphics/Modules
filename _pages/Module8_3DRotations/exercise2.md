@@ -2,8 +2,8 @@
 layout: exercise
 language: javascript
 permalink: "Module8/Exercise2"
-title: "CS 476: Computer Graphics - Module 9 Exercise 2"
-excerpt: "CS 476: Computer Graphics - Module 9 Exercise 2"
+title: "CS 476: Computer Graphics - Module 8 Exercise 2"
+excerpt: "CS 476: Computer Graphics - Module 8 Exercise 2"
 canvasasmtid: "216603"
 canvaspoints: "1.5"
 
