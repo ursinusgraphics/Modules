@@ -5,6 +5,7 @@ title: "CS 476: Computer Graphics - Module 8 Part 2: Complex Numbers"
 excerpt: "CS 476: Computer Graphics - Module 8 Part 2: Complex Numbers"
 
 info:
+  prev: "./Exercise1"
   next: "./Exercise2"
   
 ---
