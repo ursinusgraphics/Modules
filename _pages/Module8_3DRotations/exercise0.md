@@ -14,7 +14,7 @@ info:
   instructions: "Fill in the method <code>getAngles(R)</code> to extract <code>&alpha;</code>, <code>&beta;</code>, <code>&gamma;</code>, assuming that <b>R</b> is expressed as the product <h2><code>R<sub>Y</sub>(&alpha;) R<sub>X</sub>(&beta;) R<sub>Z</sub>(&gamma;)</code></h2>.  Note that you're given the matrix as a <code>mat4</code> which is <b>column major</b>.  The methods <code>Math.asin</code> and <code>Math.atan2</code> will come in handy.  No need to convert to degrees or to make the values positive.<p></p>"
   goals:
     - Convert between 3D rotation representations
-    - Convert from a rotation matrix to Tait-Bryan angles (roll/pitch/yaw)
+    - Convert from a rotation matrix to Tait-Bryan angles (yaw/pitch/roll)
 
 processor:  
   correctfeedback: "Correct!!" 
