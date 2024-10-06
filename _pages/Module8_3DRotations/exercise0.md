@@ -24,6 +24,10 @@ processor:
     var pos = feedbackString.trim();
   correctcheck: |
     pos.includes("16.71,4.92,-120.17:-40.22,-14.12,129.85") || pos.includes("-0.29,0.09,-2.1:-0.7,-0.25,2.27")
+  incorrectchecks:
+    - incorrectcheck: |
+        pos.includes("-0.29,-0.09,-2.1:-0.7,0.25,2.27") || pos.includes("-16.71,-4.92,-120.17:-40.22,14.12,129.85")
+      feedback: "You're so close!  Just do beta = Math.asin(-R[9]) instead of beta = Math.asin(R[9])</code>."    
 
 files:
   - filename: "student.js"
