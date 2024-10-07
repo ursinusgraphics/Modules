@@ -1,7 +1,7 @@
 ---
 layout: exercise
 language: graphics_shader
-permalink: "Module10/Exercise1"
+permalink: "ModuleX_LocalIllumination/Exercise1"
 title: "CS 476: Computer Graphics - Module 10 Exercise 1"
 excerpt: "CS 476: Computer Graphics - Module 10 Exercise 1"
 canvasasmtid: "160103"

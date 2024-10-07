@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module14/Video1
-title: "CS 476: Computer Graphics - Module 14: The Euler Characteristic"
-excerpt: "CS 476: Computer Graphics - Module 14: The Euler Characteristic"
+permalink: Module10/Video1
+title: "CS 476: Computer Graphics - Module 10: The Euler Characteristic"
+excerpt: "CS 476: Computer Graphics - Module 10: The Euler Characteristic"
 
 info:
   next: "./Exercise1"

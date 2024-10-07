@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: "Module9/Exercise1"
+permalink: "ModuleX_Shaders/Exercise1"
 title: "CS 476: Computer Graphics - Module 9 Exercise 1"
 excerpt: "CS 476: Computer Graphics - Module 9 Exercise 1"
 

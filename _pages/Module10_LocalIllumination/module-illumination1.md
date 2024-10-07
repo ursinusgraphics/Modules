@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: Module10/Video1
+permalink: ModuleX_LocalIllumination/Video1
 title: "CS 476: Computer Graphics - Module 10 Part 1"
 excerpt: "CS 476: Computer Graphics - Module 10 Part 1"
 

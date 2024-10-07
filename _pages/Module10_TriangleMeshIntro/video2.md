@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module14/Video2
-title: "CS 476: Computer Graphics - Module 14: Topological Invariants"
-excerpt: "CS 476: Computer Graphics - Module 14: Topological Invariants"
+permalink: Module10/Video2
+title: "CS 476: Computer Graphics - Module 10: Topological Invariants"
+excerpt: "CS 476: Computer Graphics - Module 10: Topological Invariants"
 
 info:
   next: "./Exercise2"

@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module14/Video3
-title: "CS 476: Computer Graphics - Module 14: Orientation And Orientability"
-excerpt: "CS 476: Computer Graphics - Module 14: Orientation And Orientability"
+permalink: Module10/Video3
+title: "CS 476: Computer Graphics - Module 10: Orientation And Orientability"
+excerpt: "CS 476: Computer Graphics - Module 10: Orientation And Orientability"
 
 info:
   next: "./Exercise3"

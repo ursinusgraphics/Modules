@@ -1,6 +1,6 @@
 ---
 layout: exercise_javascript
-permalink: "Module11/Exercise"
+permalink: "ModuleX_RayCasting/Exercise"
 title: "CS 476: Computer Graphics - Module 11 Exercise"
 excerpt: "CS 476: Computer Graphics - Module 11 Exercise"
 canvasasmtid: "101749"

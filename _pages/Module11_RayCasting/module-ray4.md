@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: Module11/AABBNotes
+permalink: ModuleX_RayCasting/AABBNotes
 title: "CS 476: Computer Graphics - Notes on Axis-Aligned Bounding Boxes"
 excerpt: "CS 476: Computer Graphics - Notes on Axis-Aligned Bounding Boxes"
 
