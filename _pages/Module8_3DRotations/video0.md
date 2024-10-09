@@ -1,8 +1,8 @@
 ---
 layout: module
 permalink: Module8/Video0
-title: "CS 476: Computer Graphics - Module 8 Part 1: Roll/Pitch/Yaw, Gimbals"
-excerpt: "CS 476: Computer Graphics - Module 8 Part 2: Roll/Pitch/Yaw, Gimbals"
+title: "CS 476: Computer Graphics - Module 8 Part 0: Roll/Pitch/Yaw, Gimbals"
+excerpt: "CS 476: Computer Graphics - Module 8 Part 0: Roll/Pitch/Yaw, Gimbals"
 
 info:
   next: "./Exercise0"
