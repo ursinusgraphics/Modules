@@ -2,8 +2,8 @@
 layout: exercise
 language: javascript
 permalink: "Module8/Exercise1"
-title: "CS 476: Computer Graphics - Module 8 Exercise 2"
-excerpt: "CS 476: Computer Graphics - Module 8 Exercise 2"
+title: "CS 476: Computer Graphics - Module 8 Exercise 1"
+excerpt: "CS 476: Computer Graphics - Module 8 Exercise 1"
 canvasasmtid: "217225"
 canvaspoints: "1.5"
 
@@ -22,11 +22,7 @@ processor:
   feedbackprocess: | 
     var pos = feedbackString.trim();
   correctcheck: |
-    pos.includes("0.835,0.183,0.519,-0.5,0.647,0.575,-0.23,-0.74,0.632,0.826,0.504,0.251,-0.164,0.641,-0.75,-0.539,0.578,0.613")
-  incorrectchecks:
-    - incorrectcheck: |
-      pos.includes("1,0,0,0,1,0,0,0,1,1,0,0,0,1,0,0,0,1")
-      feedback: "Try again: It looks like you're returning what was in the starter code."    
+    pos.includes("0.835,0.183,0.519,-0.5,0.647,0.575,-0.23,-0.74,0.632,0.826,0.504,0.251,-0.164,0.641,-0.75,-0.539,0.578,0.613") 
 
 files:
   - filename: "student.js"
