@@ -3,9 +3,6 @@ layout: module
 permalink: Module11/Video2
 title: "CS 476: Computer Graphics - Module 11: Half-Edge Data Structure"
 excerpt: "CS 476: Computer Graphics - Module 11: Half-Edge Data Structure"
-
-info:
-  next: "./Exercise1"
   
 ---
 
