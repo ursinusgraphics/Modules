@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.3786088"
-     inkscape:cx="314.46953"
-     inkscape:cy="876.35259"
-     inkscape:window-width="1854"
-     inkscape:window-height="1131"
-     inkscape:window-x="66"
-     inkscape:window-y="32"
+     inkscape:cx="306.27146"
+     inkscape:cy="1280.3703"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
@@ -851,16 +851,8 @@
        id="path28098" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-opacity:0.994118"
-       d="m 95.826611,448.61747 18.463019,12.44637 5.64545,-23.41215 -17.16902,-17.13918"
-       id="path28100" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-opacity:0.994118"
        d="m 120.30034,438.73512 26.44428,-0.58475"
        id="path28102" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-opacity:0.994118"
-       d="m 115.0016,462.07733 31.74622,-23.514"
-       id="path28104" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-opacity:0.994118"
        d="m 120.64878,438.9429 25.28085,-24.23186"
@@ -1140,5 +1132,21 @@
          style="stroke-width:0.529"
          x="93.705391"
          y="315.8154">3V + 3F ~= 3V + 3(2V) = 9V</tspan></text>
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.994118;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 114.11815,461.05374 32.75402,-22.1869"
+       id="path557" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.994118;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 103.47695,420.71695 16.29925,18.25802"
+       id="path559" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.994118;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 114.39808,460.91158 5.07885,-22.44021"
+       id="path561" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.994118;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 94.653688,448.4201 20.384072,13.44292"
+       id="path504" />
   </g>
 </svg>
