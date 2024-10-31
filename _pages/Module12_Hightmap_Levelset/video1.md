@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module15/Video1
-title: "CS 476: Computer Graphics - Module 15: Heightmaps And Levelsets"
-excerpt: "CS 476: Computer Graphics - Module 15: Heightmaps And Levelsets"
+permalink: Module12_Implicit/Video1
+title: "CS 476: Computer Graphics - Module 12: Heightmaps And Levelsets"
+excerpt: "CS 476: Computer Graphics - Module 12: Heightmaps And Levelsets"
 
 info:
   next: "./Exercise1"

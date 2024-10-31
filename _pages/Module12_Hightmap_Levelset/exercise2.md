@@ -1,13 +1,14 @@
 ---
 layout: exercise_javascript_heightmap
-permalink: "Module15/Exercise2"
-title: "CS 476: Computer Graphics - Module 15 Exercise 2"
-excerpt: "CS 476: Computer Graphics - Module 15 Exercise 2"
-canvasasmtid: "104212"
+permalink: "Module12_Implicit/Exercise2"
+title: "CS 476: Computer Graphics - Module 12 Exercise 2"
+excerpt: "CS 476: Computer Graphics - Module 12 Exercise 2"
+canvasasmtid: "218025"
 canvaspoints: "1.5"
 
 info:
   prev: "./Video2"
+  next: "./Video3"
   points: 1.5
   instructions: "Change the function and adjust the isolevel so that the levelset consists of a loop inside of another loop.  In 3D as a heightmap, a surface where such an isolevel exists is a volcano."
   goals:
@@ -35,6 +36,7 @@ processor:
     console.log("numComponents = " + vs.length);
     console.log("poly1InPoly2 = " + poly1InPoly2);
     console.log("poly2InPoly1 = " + poly2InPoly1);
+    outputToSend = canvas.mainEditor.getValue();
 
   correctcheck: vs.length == 2 && (poly1InPoly2 || poly2InPoly1)
 
