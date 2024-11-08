@@ -1,9 +1,9 @@
 ---
 layout: exercise_javascript_shader
-permalink: "ModuleX_LocalIllumination/Exercise2"
-title: "CS 476: Computer Graphics - Module 10 Exercise 2"
-excerpt: "CS 476: Computer Graphics - Module 10 Exercise 2"
-canvasasmtid: "101413"
+permalink: "Module14_LocalIllumination/Exercise2"
+title: "CS 476: Computer Graphics - Module 14 Exercise 2"
+excerpt: "CS 476: Computer Graphics - Module 14 Exercise 2"
+canvasasmtid: "218373"
 canvaspoints: "2"
 
 info:

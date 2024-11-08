@@ -1,6 +1,6 @@
 ---
 layout: exercise_javascript_shader
-permalink: "ModuleX_LocalIllumination/ClassExercise"
+permalink: "Module14_LocalIllumination/ClassExercise"
 title: "CS 476: Computer Graphics - Phong Shading Class Exercise"
 excerpt: "CS 476: Computer Graphics - Phong Shading Class Exercise"
 
