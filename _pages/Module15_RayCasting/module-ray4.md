@@ -13,4 +13,4 @@ info:
 Below are some notes on ray intersect axis-aligned bounding box
 </p>
 
-<img src = "../images/Unit2/RayIntersectBox.svg">
+<img src = "../images/Unit4/RayIntersectBox.svg">

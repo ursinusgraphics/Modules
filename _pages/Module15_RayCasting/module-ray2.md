@@ -15,4 +15,4 @@ Please watch the video below, and click the next button once you have finished.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQlH9Dk1AE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h1>Notes</h1>
-<img src = "../images/Unit2/RayCasting.svg">
+<img src = "../images/Unit4/RayCasting.svg">
