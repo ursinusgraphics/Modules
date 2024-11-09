@@ -9,6 +9,7 @@ canvaspoints: "2"
 
 info:
   prev: "./Video2"
+  next: "./Video3"
   points: 2
   instructions: "Fill in the vertex shader to complete per-vertex Blinn-Phong illumination.  Most of the code has been completed for you, including the Lambertian term from last time.  You need to construct the vector h from the vertex position in world coordinates to the eye position.  You also need to create the vector dh, which is the normalized vector from the vertex position to the light, reflected about the normal NT.  Then, the code is already there to take the dot product of h and dh and to raise them to the shininess factor.  Just make sure you clamp it at zero before it gets raised to a power."
   goals:
@@ -162,6 +163,7 @@ files:
                 
                 // TODO: This should be the vector from the vertex to the light, 
                 // reflected about the normal.
+                // (See my caveat on the last page if you're using the glsl reflect method)
                 vec3 dh = vec3(0.0, 0.0, 0.0);
                 // TODO: This should be a unit vector from the vertex in the direction
                 // of the eye (uEye)

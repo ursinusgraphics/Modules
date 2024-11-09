@@ -4,7 +4,7 @@ language: graphics_shader
 permalink: "Module14_LocalIllumination/Exercise3"
 title: "CS 476: Computer Graphics - Phong Shading Exercise"
 excerpt: "CS 476: Computer Graphics - Phong Shading Exercise"
-canvasasmtid: "218373"
+canvasasmtid: "218389"
 canvaspoints: "3"
 
 info:
