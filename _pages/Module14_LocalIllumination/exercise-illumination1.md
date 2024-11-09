@@ -39,19 +39,19 @@ processor:
     let isNegDotFlip = false;
     let isFlipped = false;
     if (!isCorrect) {
-        isAmbient = await pngImagesEqualTol(canvasStr, ambientStr, DEFAULT_TOL, "correctCheck");
+        isAmbient = await pngImagesEqualTol(canvasStr, ambientStr, DEFAULT_TOL, "ambientCheck");
         if (!isAmbient) {
-        isNegDotStr = await pngImagesEqualTol(canvasStr, negDotStr, DEFAULT_TOL, "correctCheck");
+        isNegDotStr = await pngImagesEqualTol(canvasStr, negDotStr, DEFAULT_TOL, "negDotCheck");
         if (!isNegDotStr) {
-        isNonNormNegDotStr = await pngImagesEqualTol(canvasStr, nonNormNegDotStr, DEFAULT_TOL, "correctCheck");
+        isNonNormNegDotStr = await pngImagesEqualTol(canvasStr, nonNormNegDotStr, DEFAULT_TOL, "noNormNegDotCheck");
         if (!isNonNormNegDotStr) {
-        isNonNorm = await pngImagesEqualTol(canvasStr, nonNormStr, DEFAULT_TOL, "correctCheck");
+        isNonNorm = await pngImagesEqualTol(canvasStr, nonNormStr, DEFAULT_TOL, "noNormCheck");
         if (!isNonNorm) {
-        isNonNormNegDotFlip = await pngImagesEqualTol(canvasStr, nonNormNegDotStrFlip, DEFAULT_TOL, "correctCheck");
+        isNonNormNegDotFlip = await pngImagesEqualTol(canvasStr, nonNormNegDotStrFlip, DEFAULT_TOL, "noNormNegDotFlipCheck");
         if (!isNonNormNegDotFlip) {
-        isNegDotFlip = await pngImagesEqualTol(canvasStr, negDotStrFlip, DEFAULT_TOL, "correctCheck");
+        isNegDotFlip = await pngImagesEqualTol(canvasStr, negDotStrFlip, DEFAULT_TOL, "negDotFlipCheck");
         if (!isNegDotFlip) {
-        isFlipped = await pngImagesEqualTol(canvasStr, flipStr, DEFAULT_TOL, "correctCheck");
+        isFlipped = await pngImagesEqualTol(canvasStr, flipStr, DEFAULT_TOL, "flipCheck");
         }
         }
         }
@@ -148,7 +148,7 @@ files:
   - filename: "shader.frag"
     name: frag
     ismain: false
-    isreadonly: false
+    isreadonly:  true
     isvisible: true
     excludeFromExport: true
     code: |
@@ -162,7 +162,7 @@ files:
   - filename: "scene.json"
     name: scene
     ismain: false
-    isreadonly: false
+    isreadonly: true
     isvisible: true
     excludeFromExport: true
     code: |
@@ -252,7 +252,7 @@ files:
                         "shapes":[
                             {
                                 "type":"sphere",
-                                "radius":0.5,
+                                "radius":1,
                                 "center":[0, 0, -10],
                                 "material":"green"
                             }
