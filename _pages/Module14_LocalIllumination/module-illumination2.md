@@ -19,7 +19,13 @@ Please watch the video below, and click the next button once you have finished.
 
 <h1>The reflect() function in GLSL</h1>
 <p>
-One thing I didn't mention in the video is that there's a built-in function in GLSL called <a href = "https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml">reflect()</a> to do reflections.  But we have to be careful when using it for specular, because it actually gives the wrong reflection.  The image below shows how:
+Below is a video I made that derive what the <code><a href = "https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml">reflect()</a></code> method in glsl does
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-4U8oLgrE9U?si=9tZS8kR73Dnb77HR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>
+But we have to be careful when using this exact method for the specular reflection, because it actually gives the negative direction of what we want.  This is because both of the vectors we construct are heading away from point of intersection, as shown in the image below:
 </p>
 
 <img src = "../images/Unit4/reflectfn.svg">
