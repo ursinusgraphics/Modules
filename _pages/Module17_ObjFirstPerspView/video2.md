@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module13/Video2
-title: "CS 476: Computer Graphics - Module 13 Video 2"
-excerpt: "CS 476: Computer Graphics - Module 13 Video 2"
+permalink: Module17/Video2
+title: "CS 476: Computer Graphics - Module 17 Video 2"
+excerpt: "CS 476: Computer Graphics - Module 17 Video 2"
 
 info:
   next: "./Exercise1"

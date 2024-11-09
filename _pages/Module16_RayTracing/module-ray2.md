@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module12/Video2
-title: "CS 476: Computer Graphics - Module 12: Ray Instancing"
-excerpt: "CS 476: Computer Graphics - Module 12: Ray Instancing"
+permalink: Module16/Video2
+title: "CS 476: Computer Graphics - Module 16: Ray Instancing"
+excerpt: "CS 476: Computer Graphics - Module 16: Ray Instancing"
 
 info:
   next: "./Video3"

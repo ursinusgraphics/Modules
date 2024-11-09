@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: ModuleX_RayCasting/Video2
-title: "CS 476: Computer Graphics - Module 11 Video 2/3"
-excerpt: "CS 476: Computer Graphics - Module 11 Video 2/3"
+permalink: Module15_RayCasting/Video2
+title: "CS 476: Computer Graphics - Module 15 Video 2/3"
+excerpt: "CS 476: Computer Graphics - Module 15 Video 2/3"
 
 info:
   next: "./Video3"

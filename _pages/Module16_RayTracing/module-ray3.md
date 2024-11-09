@@ -1,8 +1,8 @@
 ---
 layout: module
-permalink: Module12/Video3
-title: "CS 476: Computer Graphics - Module 12: Ray Shadows"
-excerpt: "CS 476: Computer Graphics - Module 12: Ray Shadows"
+permalink: Module16/Video3
+title: "CS 476: Computer Graphics - Module 16: Ray Shadows"
+excerpt: "CS 476: Computer Graphics - Module 16: Ray Shadows"
 
 info:
   prev: "./Video2"

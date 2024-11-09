@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: Module16/Video1
+permalink: ModuleX_BoundingSphere/Video1
 title: "CS 476: Computer Graphics - Module 16: Bounding Spheres Collision Detection"
 excerpt: "CS 476: Computer Graphics - Module 16: Bounding Spheres Collision Detection"
 

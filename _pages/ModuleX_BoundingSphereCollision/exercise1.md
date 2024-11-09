@@ -1,6 +1,6 @@
 ---
 layout: exercise_javascript
-permalink: "Module16/Exercise1"
+permalink: "ModuleX_BoundingSphere/Exercise1"
 title: "CS 476: Computer Graphics - Module 16 Bounding Sphere Exercise"
 excerpt: "CS 476: Computer Graphics - Module 16 Bounding Sphere Exercise"
 canvasasmtid: "104644"
