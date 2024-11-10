@@ -1,15 +1,16 @@
 ---
-layout: exercise_javascript
+layout: exercise
+language: javascript
 permalink: "Module15_RayCasting/Exercise"
 title: "CS 476: Computer Graphics - Module 15 Exercise"
 excerpt: "CS 476: Computer Graphics - Module 15 Exercise"
-canvasasmtid: "101749"
-canvaspoints: "1"
+canvasasmtid: "218409"
+canvaspoints: "1.5"
 
 info:
   prev: "./Video3"
   next: "./AABBNotes"
-  points: 1
+  points: 1.5
   instructions: "Fill in the method <code>getSphereNormal</code> to compute the normal at a point of intersection on the sphere.  Note that we're going back into Javascript/glmatrix library mode for a moment, but that this stuff is much simpler with the built-in functions in GLSL."
   goals:
     - Work with vector math to accomplish tasks for ray tracing
@@ -37,12 +38,13 @@ processor:
 
 
 files:
-  - filename: "Student Code"
+  - filename: "student.js"
     name: arrayutils
     ismain: false
     isreadonly: false
     isvisible: true
     code: |
+        const vec3 = glMatrix.vec3;
         /**
          * Compute the normal of a sphere at a point on the sphere
          * 
@@ -55,7 +57,7 @@ files:
           return res;
         }
 
-  - filename: "Test Code Block"
+  - filename: "main.js"
     name: tester
     ismain: true
     isreadonly: true
@@ -76,4 +78,6 @@ files:
         let n3 = getSphereNormal(c3, p3);
         let s3 = glMatrix.vec3.str(n3);
         console.log(s1 + "." + s2 + "." + s3);
+
+openFilesOnLoad: ["main.js", "student.js"]
 ---

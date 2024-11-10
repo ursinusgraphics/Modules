@@ -1,10 +1,10 @@
 ---
 layout: exercise
 language: graphics_view
-permalink: "PerspectiveView/Exercise1"
+permalink: "Module17/Exercise1"
 title: "CS 476: Computer Graphics - Object First Perspective/Viewing Exercise 1"
 excerpt: "CS 476: Computer Graphics - Object First Perspective/Viewing Exercise 1"
-canvasasmtid: "160487"
+canvasasmtid: "218407"
 canvaspoints: "1.5"
 
 info:
@@ -62,7 +62,8 @@ files:
   - filename: "scene.json"
     name: scene
     ismain: true
-    isreadonly: false
+    isreadonly: true
+    excludeFromExport: true
     isvisible: true
     code: |
         {
@@ -120,7 +121,7 @@ files:
                     "shapes":[
                         {
                             "type":"sphere",
-                            "radius":0.5,
+                            "radius":1,
                             "center":[-3, 0, 3]
                         }
                     ]
@@ -162,7 +163,7 @@ files:
                     "shapes":[
                         {
                             "type":"sphere",
-                            "radius":0.5,
+                            "radius":1,
                             "center":[0, 0, -10],
                             "material":"green"
                         }
