@@ -8,7 +8,7 @@ info:
   prev: "./Video2"
   
 ---
-Please watch the video below
+Please watch the video below, then <a href = "https://ursinus.instructure.com/courses/18079/quizzes/28197">Click here</a> to complete a brief exercise
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gey_u_l1rhI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

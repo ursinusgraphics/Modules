@@ -10,7 +10,7 @@ info:
   
 ---
 
-Please watch the video below, and click the next button once you have finished.
+Please watch the video below, then complete a brief exercise at <a href = "https://ursinus.instructure.com/courses/18079/quizzes/28198">this link</a>.  When you are finished, click the next button to continue to th next video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AE4uTvX87oo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
