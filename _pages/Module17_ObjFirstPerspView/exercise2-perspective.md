@@ -6,6 +6,7 @@ title: "CS 476: Computer Graphics - Module 17 Exercise 2"
 excerpt: "CS 476: Computer Graphics - Module 17 Exercise 2"
 canvasasmtid: "218408"
 canvaspoints: "1.5"
+canvashalftries: 5
 
 info:
   prev: "./Video3"

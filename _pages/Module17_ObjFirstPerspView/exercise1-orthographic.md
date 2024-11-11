@@ -6,6 +6,7 @@ title: "CS 476: Computer Graphics - Object First Perspective/Viewing Exercise 1"
 excerpt: "CS 476: Computer Graphics - Object First Perspective/Viewing Exercise 1"
 canvasasmtid: "218407"
 canvaspoints: "1.5"
+canvashalftries: 5
 
 info:
   prev: "./Video2"
