@@ -6,7 +6,7 @@ title: "CS 476: Computer Graphics - Phong Shading Exercise"
 excerpt: "CS 476: Computer Graphics - Phong Shading Exercise"
 canvasasmtid: "218389"
 canvaspoints: "3"
-canvashalftries: 10
+canvashalftries: 100000
 
 info:
   prev: "./Video3"
