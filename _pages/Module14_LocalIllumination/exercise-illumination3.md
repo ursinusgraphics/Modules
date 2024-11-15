@@ -11,7 +11,7 @@ canvashalftries: 10
 info:
   prev: "./Video3"
   points: 3
-  instructions: "Move the code for Phong illumination in the vertex shader over to the fragment shader.  You should create varying attributes for intersection, normal, and color.  The TODO items in the vertex and fragment shader give more info."
+  instructions: "Move the code for Phong illumination in the vertex shader over to the fragment shader.  You should create varying attributes for intersection, normal, and color.  The TODO items in the vertex and fragment shader give more info.<p><b>NOTE:</b> There seems to be a bug in the autograder for this one where it marks incorrect code as correct.  For now, I'm marking all answers wrong, so please upload your vertex and fragment shaders to canvas at <a href = \"https://ursinus.instructure.com/courses/18079/assignments/218389\">this link</a> once you believe it's working properly, and I will grade them manually</p>"
   goals:
     - Explore how to convert Gouraud shading into Phong shading by moving the appropriate code over from the vertex shader to the fragment shader
 
@@ -32,7 +32,7 @@ processor:
         
     }
 
-  correctcheck: isCorrect
+  correctcheck: false
   incorrectchecks:
     - incorrectcheck: isDiffuseOnly
       feedback: "Try again: It looks like you still only have ambient+diffuse lighting.  You need to finish the specular term" 
